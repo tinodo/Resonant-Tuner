@@ -9,7 +9,7 @@
   <Identity
     Name="14420Scriptwizard.ResonantTuner"
     Publisher="CN=0BC2802E-0560-42A0-95F2-F0AEEE4F57FA"
-    Version="0.1.0.0" ProcessorArchitecture="x64" />
+    Version="1.0.0.0" ProcessorArchitecture="x64" />
 
   <Properties>
     <DisplayName>Resonant Tuner</DisplayName>
