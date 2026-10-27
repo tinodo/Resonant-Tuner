@@ -21,8 +21,9 @@ Build and test only (not distributed with the application):
 The exact package versions, including transitive packages, are pinned in the
 packages.lock.json file next to each project.
 
-Fonts: the app uses the system Segoe UI / Segoe UI Variable / Segoe Fluent
-Icons fonts only; no font files are embedded or redistributed.
+Fonts: the app uses the fonts installed with Windows (Segoe UI, Segoe UI
+Variable, Segoe Fluent Icons and Bahnschrift); no font files are embedded or
+redistributed.
 
 --------------------------------------------------------------------------------
 Math.NET Numerics 5.0.0
