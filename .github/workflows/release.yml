@@ -1,0 +1,80 @@
+name: Prepare Draft Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'MSIX version (major.minor.build.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: draft-release
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    if: github.ref == 'refs/heads/main'
+    runs-on: windows-2025
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      RELEASE_VERSION: ${{ inputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Validate release version
+        run: |
+          if ($env:RELEASE_VERSION -notmatch '^\d+\.\d+\.\d+\.0$') {
+            throw 'Use major.minor.build.0.'
+          }
+          $version = [version]$env:RELEASE_VERSION
+          if ($version.Major -gt 65535 -or $version.Minor -gt 65535 -or $version.Build -gt 65535) {
+            throw 'MSIX version components must not exceed 65535.'
+          }
+      - name: Restore locked dependencies
+        run: dotnet restore Resonant.sln --locked-mode
+      - name: Test core
+        run: dotnet test tests/Resonant.Core.Tests/Resonant.Core.Tests.csproj --configuration Release --no-restore --logger trx --results-directory TestResults/Core
+      - name: Test audio controller
+        run: dotnet test tests/Resonant.Audio.Tests/Resonant.Audio.Tests.csproj --configuration Release --no-restore --logger trx --results-directory TestResults/Audio
+      - name: Package Windows x64 ZIP and unsigned Store MSIX
+        run: ./packaging/Build-Release.ps1 -Version $env:RELEASE_VERSION -NoRestore
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-test-results
+          path: TestResults/**/*.trx
+          if-no-files-found: warn
+      - name: Retain release packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: Resonant-release-packages
+          path: artifacts/release-${{ inputs.version }}/
+          if-no-files-found: error
+      - name: Create unpublished draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          $tag = "v$env:RELEASE_VERSION"
+          $release = "artifacts/release-$env:RELEASE_VERSION"
+          $notes = @'
+          Windows 11 x64. Download the portable ZIP and verify SHA256SUMS.txt.
+
+          The unsigned MSIX is for Microsoft Partner Center ingestion, not direct sideload installation.
+
+          DRAFT: Owner review of licensing, artwork, privacy, listing content, and installed-package validation is required before publication. Store submission is a separate owner-controlled action.
+          '@
+          gh release create $tag "$release/Resonant-$env:RELEASE_VERSION-win-x64.zip" "$release/Resonant-$env:RELEASE_VERSION-win-x64.msix" "$release/SHA256SUMS.txt" --draft --target $env:GITHUB_SHA --title "Resonant Tuner $env:RELEASE_VERSION" --notes $notes
+          if ($LASTEXITCODE -ne 0) { throw 'Draft release creation failed.' }

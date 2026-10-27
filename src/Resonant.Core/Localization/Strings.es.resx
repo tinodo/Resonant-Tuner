@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <data name=", off scale" xml:space="preserve">
+    <value>, fuera de escala</value>
+  </data>
+  <data name="'{0}' is not a note with an octave, for example E2 or F#3." xml:space="preserve">
+    <value>'{0}' no es una nota con octava, por ejemplo E2 o F#3.</value>
+  </data>
+  <data name="{0:0.0} cents {1}{2}" xml:space="preserve">
+    <value>{0:0.0} cents {1}{2}</value>
+  </data>
+  <data name="{0} · {1} strings · {2}" xml:space="preserve">
+    <value>{0} · {1} cuerdas · {2}</value>
+  </data>
+  <data name="{0} (default)" xml:space="preserve">
+    <value>{0} (predeterminado)</value>
+  </data>
+  <data name="{0} {1}, {2} strings: {3}" xml:space="preserve">
+    <value>{0} {1}, {2} cuerdas: {3}</value>
+  </data>
+  <data name="{0} {1}, target {2}, confidence {3}" xml:space="preserve">
+    <value>{0} {1}, objetivo {2}, fiabilidad {3}</value>
+  </data>
+  <data name="{0} input and {1} output devices found." xml:space="preserve">
+    <value>Se encontraron {0} entradas y {1} salidas de audio.</value>
+  </data>
+  <data name="{0} is outside the {1:0}–{2:0} Hz range this tuner can measure." xml:space="preserve">
+    <value>{0} está fuera del rango medible de {1:0}–{2:0} Hz.</value>
+  </data>
+  <data name="{0}, {1}, {2}, {3}" xml:space="preserve">
+    <value>{0}, {1}, {2}, {3}</value>
+  </data>
+  <data name="All instruments" xml:space="preserve">
+    <value>Todos los instrumentos</value>
+  </data>
+  <data name="Audio device could not be changed: " xml:space="preserve">
+    <value>No se pudo cambiar el dispositivo de audio: </value>
+  </data>
+  <data name="Audio device selection updated." xml:space="preserve">
+    <value>Selección de audio actualizada.</value>
+  </data>
+  <data name="Audio devices could not be listed: " xml:space="preserve">
+    <value>No se pudieron listar los dispositivos de audio: </value>
+  </data>
+  <data name="Audio rendering failed: {0}" xml:space="preserve">
+    <value>Error al generar audio: {0}</value>
+  </data>
+  <data name="Auto string" xml:space="preserve">
+    <value>Cuerda automática</value>
+  </data>
+  <data name="Baritone" xml:space="preserve">
+    <value>Barítono</value>
+  </data>
+  <data name="Bass" xml:space="preserve">
+    <value>Bajo</value>
+  </data>
+  <data name="Bass, 4 strings" xml:space="preserve">
+    <value>Bajo, 4 cuerdas</value>
+  </data>
+  <data name="Bass, low B at 30.8677 Hz" xml:space="preserve">
+    <value>Bajo, si grave a 30,8677 Hz</value>
+  </data>
+  <data name="Capo" xml:space="preserve">
+    <value>Cejilla</value>
+  </data>
+  <data name="cents" xml:space="preserve">
+    <value>cents</value>
+  </data>
+  <data name="Channel 1 (first)" xml:space="preserve">
+    <value>Canal 1 (primero)</value>
+  </data>
+  <data name="Channel 2" xml:space="preserve">
+    <value>Canal 2</value>
+  </data>
+  <data name="Channel 3" xml:space="preserve">
+    <value>Canal 3</value>
+  </data>
+  <data name="Channel 4" xml:space="preserve">
+    <value>Canal 4</value>
+  </data>
+  <data name="Channel 5" xml:space="preserve">
+    <value>Canal 5</value>
+  </data>
+  <data name="Channel 6" xml:space="preserve">
+    <value>Canal 6</value>
+  </data>
+  <data name="Channel 7" xml:space="preserve">
+    <value>Canal 7</value>
+  </data>
+  <data name="Channel 8" xml:space="preserve">
+    <value>Canal 8</value>
+  </data>
+  <data name="Check the tuning" xml:space="preserve">
+    <value>Revise la afinación</value>
+  </data>
+  <data name="Choose between {0} and {1} strings." xml:space="preserve">
+    <value>Elija entre {0} y {1} cuerdas.</value>
+  </data>
+  <data name="Chromatic" xml:space="preserve">
+    <value>Cromático</value>
+  </data>
+  <data name="Clipping detected. Lower the input gain or move away from the microphone." xml:space="preserve">
+    <value>Saturación detectada. Reduzca la ganancia o aléjese del micrófono.</value>
+  </data>
+  <data name="Compact mode" xml:space="preserve">
+    <value>Modo compacto</value>
+  </data>
+  <data name="Compact window" xml:space="preserve">
+    <value>Ventana compacta</value>
+  </data>
+  <data name="Custom tuning · this session only" xml:space="preserve">
+    <value>Afinación personalizada · solo esta sesión</value>
+  </data>
+  <data name="Custom tuning editor" xml:space="preserve">
+    <value>Editor de afinación</value>
+  </data>
+  <data name="Custom tunings" xml:space="preserve">
+    <value>Afinaciones personalizadas</value>
+  </data>
+  <data name="Custom tunings are never saved. Your edit is kept only until you close Resonant Tuner, and it is not applied until you choose Use for this session." xml:space="preserve">
+    <value>Las afinaciones personalizadas no se guardan. La edición dura hasta cerrar Resonant Tuner y se aplica con Usar en esta sesión.</value>
+  </data>
+  <data name="Custom tunings reset when Resonant Tuner closes." xml:space="preserve">
+    <value>Las afinaciones personalizadas se eliminan al cerrar Resonant Tuner.</value>
+  </data>
+  <data name="DADGAD" xml:space="preserve">
+    <value>DADGAD</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Oscuro</value>
+  </data>
+  <data name="Detected note" xml:space="preserve">
+    <value>Nota detectada</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Pantalla</value>
+  </data>
+  <data name="Drop D" xml:space="preserve">
+    <value>Drop D</value>
+  </data>
+  <data name="Enable access in Windows Settings, then retry." xml:space="preserve">
+    <value>Permita el acceso en Configuración de Windows y vuelva a intentarlo.</value>
+  </data>
+  <data name="Enter a name for the tuning." xml:space="preserve">
+    <value>Introduzca un nombre para la afinación.</value>
+  </data>
+  <data name="Enter at least one string target such as E2." xml:space="preserve">
+    <value>Introduzca al menos una nota objetivo, como E2.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Every string one semitone lower" xml:space="preserve">
+    <value>Cada cuerda un semitono más baja</value>
+  </data>
+  <data name="Expected {0} targets but found {1}." xml:space="preserve">
+    <value>Se esperaban {0} notas objetivo, pero se encontraron {1}.</value>
+  </data>
+  <data name="Fair" xml:space="preserve">
+    <value>Aceptable</value>
+  </data>
+  <data name="flat" xml:space="preserve">
+    <value>bajo</value>
+  </data>
+  <data name="Flats (Db)" xml:space="preserve">
+    <value>Bemoles (Db)</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Buena</value>
+  </data>
+  <data name="Guitar" xml:space="preserve">
+    <value>Guitarra</value>
+  </data>
+  <data name="Half-step down" xml:space="preserve">
+    <value>Un semitono más bajo</value>
+  </data>
+  <data name="High G" xml:space="preserve">
+    <value>Sol agudo</value>
+  </data>
+  <data name="High input level. Leave more headroom by lowering the gain or moving back." xml:space="preserve">
+    <value>Nivel de entrada alto. Reduzca la ganancia o aléjese.</value>
+  </data>
+  <data name="Hold steady" xml:space="preserve">
+    <value>Mantener</value>
+  </data>
+  <data name="If the selected input channel is unavailable, channel 1 is used." xml:space="preserve">
+    <value>Si el canal elegido no está disponible, se utiliza el canal 1.</value>
+  </data>
+  <data name="PitchInTune" xml:space="preserve">
+    <value>afinado</value>
+  </data>
+  <data name="In tune" xml:space="preserve">
+    <value>Afinado</value>
+  </data>
+  <data name="In-tune tolerance (cents)" xml:space="preserve">
+    <value>Tolerancia de afinación (cents)</value>
+  </data>
+  <data name="Input channel" xml:space="preserve">
+    <value>Canal de entrada</value>
+  </data>
+  <data name="Input clipping" xml:space="preserve">
+    <value>Entrada saturada</value>
+  </data>
+  <data name="Input device" xml:space="preserve">
+    <value>Dispositivo de entrada</value>
+  </data>
+  <data name="Input is clipping. Move back from the microphone or lower the input level." xml:space="preserve">
+    <value>Entrada saturada. Aléjese del micrófono o reduzca el nivel.</value>
+  </data>
+  <data name="Input too loud" xml:space="preserve">
+    <value>Entrada demasiado alta</value>
+  </data>
+  <data name="Input: selected device" xml:space="preserve">
+    <value>Entrada: dispositivo seleccionado</value>
+  </data>
+  <data name="Input: system default" xml:space="preserve">
+    <value>Entrada: predeterminada del sistema</value>
+  </data>
+  <data name="Follow Windows" xml:space="preserve">
+    <value>Seguir Windows</value>
+  </data>
+  <data name="Interface language" xml:space="preserve">
+    <value>Idioma de la interfaz</value>
+  </data>
+  <data name="Instrument" xml:space="preserve">
+    <value>Instrumento</value>
+  </data>
+  <data name="Instrument filter" xml:space="preserve">
+    <value>Filtro de instrumentos</value>
+  </data>
+  <data name="Instrument library" xml:space="preserve">
+    <value>Biblioteca de instrumentos</value>
+  </data>
+  <data name="Instrument tuning" xml:space="preserve">
+    <value>Afinación del instrumento</value>
+  </data>
+  <data name="Keep editing" xml:space="preserve">
+    <value>Seguir editando</value>
+  </data>
+  <data name="Keep on top of other windows" xml:space="preserve">
+    <value>Mantener en primer plano</value>
+  </data>
+  <data name="Keyboard" xml:space="preserve">
+    <value>Teclado</value>
+  </data>
+  <data name="Last reading" xml:space="preserve">
+    <value>Última lectura</value>
+  </data>
+  <data name="Last reading · {0}" xml:space="preserve">
+    <value>Última lectura · {0}</value>
+  </data>
+  <data name="last reading, no current pitch" xml:space="preserve">
+    <value>última lectura, sin tono actual</value>
+  </data>
+  <data name="Leave" xml:space="preserve">
+    <value>Salir</value>
+  </data>
+  <data name="Leave this custom tuning?" xml:space="preserve">
+    <value>¿Salir de esta afinación personalizada?</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Claro</value>
+  </data>
+  <data name="Linear physical string order" xml:space="preserve">
+    <value>Orden físico lineal de las cuerdas</value>
+  </data>
+  <data name="Listening" xml:space="preserve">
+    <value>Escuchando</value>
+  </data>
+  <data name="Listening is paused" xml:space="preserve">
+    <value>Escucha en pausa</value>
+  </data>
+  <data name="Lock a string (string 1 to 9)" xml:space="preserve">
+    <value>Fijar una cuerda (cuerdas 1 a 9)</value>
+  </data>
+  <data name="Lock target to {0}" xml:space="preserve">
+    <value>Fijar objetivo en {0}</value>
+  </data>
+  <data name="StringLocked" xml:space="preserve">
+    <value>fijada</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Fijada</value>
+  </data>
+  <data name="Low G" xml:space="preserve">
+    <value>Sol grave</value>
+  </data>
+  <data name="Low string one whole step down" xml:space="preserve">
+    <value>Cuerda grave un tono más baja</value>
+  </data>
+  <data name="Lowest string to highest" xml:space="preserve">
+    <value>De la cuerda más grave a la más aguda</value>
+  </data>
+  <data name="Mandolin" xml:space="preserve">
+    <value>Mandolina</value>
+  </data>
+  <data name="Measured" xml:space="preserve">
+    <value>Medido</value>
+  </data>
+  <data name="Microphone access is off" xml:space="preserve">
+    <value>Acceso al micrófono desactivado</value>
+  </data>
+  <data name="Microphone access is off. Enable access in Windows Settings, then retry." xml:space="preserve">
+    <value>El acceso al micrófono está desactivado. Permítalo en Configuración de Windows y reintente.</value>
+  </data>
+  <data name="Microphone input level" xml:space="preserve">
+    <value>Nivel del micrófono</value>
+  </data>
+  <data name="Microphone is off" xml:space="preserve">
+    <value>Micrófono desactivado</value>
+  </data>
+  <data name="Microphone is off." xml:space="preserve">
+    <value>Micrófono desactivado.</value>
+  </data>
+  <data name="Microphone lost" xml:space="preserve">
+    <value>Micrófono desconectado</value>
+  </data>
+  <data name="Microphone paused while the reference tone plays." xml:space="preserve">
+    <value>Micrófono en pausa durante el tono de referencia.</value>
+  </data>
+  <data name="Microphone settings" xml:space="preserve">
+    <value>Ajustes del micrófono</value>
+  </data>
+  <data name="Microphone unavailable" xml:space="preserve">
+    <value>Micrófono no disponible</value>
+  </data>
+  <data name="My open tuning" xml:space="preserve">
+    <value>Mi afinación abierta</value>
+  </data>
+  <data name="No custom tunings" xml:space="preserve">
+    <value>Sin afinaciones personalizadas</value>
+  </data>
+  <data name="No microphone was found. Connect an input device, then retry." xml:space="preserve">
+    <value>No se encontró ningún micrófono. Conecte uno y vuelva a intentarlo.</value>
+  </data>
+  <data name="No signal" xml:space="preserve">
+    <value>Sin señal</value>
+  </data>
+  <data name="No signal. Pluck one string and let it ring." xml:space="preserve">
+    <value>Sin señal. Pulse una cuerda y déjela sonar.</value>
+  </data>
+  <data name="Normal input level. Pitch confidence is shown separately." xml:space="preserve">
+    <value>Nivel normal. La fiabilidad del tono se muestra por separado.</value>
+  </data>
+  <data name="Note spelling" xml:space="preserve">
+    <value>Notación de las notas</value>
+  </data>
+  <data name="Number of strings" xml:space="preserve">
+    <value>Número de cuerdas</value>
+  </data>
+  <data name="Octaves matter. Repeated notes are allowed. Use 1 to 12 strings." xml:space="preserve">
+    <value>Indique las octavas. Se permiten notas repetidas. Use de 1 a 12 cuerdas.</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="Open D" xml:space="preserve">
+    <value>Re abierto</value>
+  </data>
+  <data name="Open D major" xml:space="preserve">
+    <value>Re mayor abierto</value>
+  </data>
+  <data name="Open G" xml:space="preserve">
+    <value>Sol abierto</value>
+  </data>
+  <data name="Open G major" xml:space="preserve">
+    <value>Sol mayor abierto</value>
+  </data>
+  <data name="Open suspended tuning" xml:space="preserve">
+    <value>Afinación abierta suspendida</value>
+  </data>
+  <data name="Open Windows microphone settings" xml:space="preserve">
+    <value>Abrir los ajustes de micrófono de Windows</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Pause listening" xml:space="preserve">
+    <value>Pausar escucha</value>
+  </data>
+  <data name="Paused" xml:space="preserve">
+    <value>En pausa</value>
+  </data>
+  <data name="Pitch confidence" xml:space="preserve">
+    <value>Fiabilidad del tono</value>
+  </data>
+  <data name="Pitch is unclear. Mute the other strings and let one ring." xml:space="preserve">
+    <value>Tono incierto. Silencie las otras cuerdas y deje sonar una.</value>
+  </data>
+  <data name="Pitch meter: {0}" xml:space="preserve">
+    <value>Medidor de tono: {0}</value>
+  </data>
+  <data name="Pitch meter: no pitch detected" xml:space="preserve">
+    <value>Medidor de tono: no se detecta ninguna nota</value>
+  </data>
+  <data name="Pitch unclear" xml:space="preserve">
+    <value>Tono incierto</value>
+  </data>
+  <data name="Pluck one string" xml:space="preserve">
+    <value>Pulse una cuerda</value>
+  </data>
+  <data name="Quiet input. A clean note may still be detected; move closer if detection is unreliable." xml:space="preserve">
+    <value>Entrada baja. Una nota clara puede detectarse; acérquese si la detección no es fiable.</value>
+  </data>
+  <data name="Re-entrant physical string order" xml:space="preserve">
+    <value>Orden físico con sol agudo reentrante</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Listo</value>
+  </data>
+  <data name="Reference  A4 = {0:0.#} Hz" xml:space="preserve">
+    <value>Referencia  A4 = {0:0.#} Hz</value>
+  </data>
+  <data name="Reference {0}" xml:space="preserve">
+    <value>Referencia {0}</value>
+  </data>
+  <data name="Reference A4 (Hz)" xml:space="preserve">
+    <value>Referencia A4 (Hz)</value>
+  </data>
+  <data name="Reference output" xml:space="preserve">
+    <value>Salida del tono de referencia</value>
+  </data>
+  <data name="Reference tone" xml:space="preserve">
+    <value>Tono de referencia</value>
+  </data>
+  <data name="Reference tone stopped: " xml:space="preserve">
+    <value>Tono de referencia detenido: </value>
+  </data>
+  <data name="Reference tone unavailable: " xml:space="preserve">
+    <value>Tono de referencia no disponible: </value>
+  </data>
+  <data name="Reference tone unavailable: {0}" xml:space="preserve">
+    <value>Tono de referencia no disponible: {0}</value>
+  </data>
+  <data name="Refresh devices" xml:space="preserve">
+    <value>Actualizar dispositivos</value>
+  </data>
+  <data name="Remove custom tuning" xml:space="preserve">
+    <value>Eliminar afinación personalizada</value>
+  </data>
+  <data name="Remove tuning" xml:space="preserve">
+    <value>Eliminar afinación</value>
+  </data>
+  <data name="Requesting microphone" xml:space="preserve">
+    <value>Solicitando acceso al micrófono</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="Restore window size" xml:space="preserve">
+    <value>Restaurar ventana</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Reanudar</value>
+  </data>
+  <data name="Resume listening" xml:space="preserve">
+    <value>Reanudar escucha</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Reintentar</value>
+  </data>
+  <data name="Session only. Not saved after closing." xml:space="preserve">
+    <value>Solo esta sesión. No se guarda al cerrar.</value>
+  </data>
+  <data name="Settings reset when Resonant Tuner closes." xml:space="preserve">
+    <value>Los ajustes se restablecen al cerrar Resonant Tuner.</value>
+  </data>
+  <data name="sharp" xml:space="preserve">
+    <value>alto</value>
+  </data>
+  <data name="Sharps (C#)" xml:space="preserve">
+    <value>Sostenidos (C#)</value>
+  </data>
+  <data name="Sound &amp; display" xml:space="preserve">
+    <value>Sonido y pantalla</value>
+  </data>
+  <data name="Sound input" xml:space="preserve">
+    <value>Entrada de audio</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value>Espacio</value>
+  </data>
+  <data name="Spectrum" xml:space="preserve">
+    <value>Espectro</value>
+  </data>
+  <data name="Stable" xml:space="preserve">
+    <value>Estable</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Estándar</value>
+  </data>
+  <data name="Standard five-string" xml:space="preserve">
+    <value>Estándar de cinco cuerdas</value>
+  </data>
+  <data name="Standard four-string" xml:space="preserve">
+    <value>Estándar de cuatro cuerdas</value>
+  </data>
+  <data name="Start / stop listening" xml:space="preserve">
+    <value>Iniciar / detener escucha</value>
+  </data>
+  <data name="Starting microphone" xml:space="preserve">
+    <value>Iniciando micrófono</value>
+  </data>
+  <data name="Stop reference tone" xml:space="preserve">
+    <value>Detener tono de referencia</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Detenido</value>
+  </data>
+  <data name="STRING {0}" xml:space="preserve">
+    <value>CUERDA {0}</value>
+  </data>
+  <data name="String targets" xml:space="preserve">
+    <value>Notas objetivo de las cuerdas</value>
+  </data>
+  <data name="String targets, in physical string order" xml:space="preserve">
+    <value>Notas objetivo en el orden físico de las cuerdas</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="System default input" xml:space="preserve">
+    <value>Entrada predeterminada del sistema</value>
+  </data>
+  <data name="System default output" xml:space="preserve">
+    <value>Salida predeterminada del sistema</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Objetivo</value>
+  </data>
+  <data name="The audio engine runs at {0} Hz; this tuner needs at least {1} Hz." xml:space="preserve">
+    <value>El motor de audio funciona a {0} Hz; el afinador necesita al menos {1} Hz.</value>
+  </data>
+  <data name="The audio input stopped unexpectedly." xml:space="preserve">
+    <value>La entrada de audio se detuvo inesperadamente.</value>
+  </data>
+  <data name="The default microphone changed. Press Start to listen on the new device." xml:space="preserve">
+    <value>El micrófono predeterminado ha cambiado. Elija Reintentar para utilizar el nuevo.</value>
+  </data>
+  <data name="The input is clipping, so the pitch may be wrong. Lower the input level or move back." xml:space="preserve">
+    <value>La entrada está saturada y el tono puede ser incorrecto. Reduzca el nivel o aléjese.</value>
+  </data>
+  <data name="The microphone could not be opened ({0})." xml:space="preserve">
+    <value>No se pudo abrir el micrófono ({0}).</value>
+  </data>
+  <data name="The microphone could not be started: {0}" xml:space="preserve">
+    <value>No se pudo iniciar el micrófono: {0}</value>
+  </data>
+  <data name="The microphone could not be started." xml:space="preserve">
+    <value>No se pudo iniciar el micrófono.</value>
+  </data>
+  <data name="The microphone is unavailable or in use. Close other apps using it, then retry." xml:space="preserve">
+    <value>El micrófono no está disponible o está ocupado. Cierre las otras aplicaciones que lo usan y reintente.</value>
+  </data>
+  <data name="The microphone is unavailable." xml:space="preserve">
+    <value>El micrófono no está disponible.</value>
+  </data>
+  <data name="The microphone stopped responding. Reconnect it, then press Start." xml:space="preserve">
+    <value>El micrófono no responde. Reconéctelo y elija Reintentar.</value>
+  </data>
+  <data name="The output device could not be opened ({0})." xml:space="preserve">
+    <value>No se pudo abrir el dispositivo de salida ({0}).</value>
+  </data>
+  <data name="the output device could not start." xml:space="preserve">
+    <value>el dispositivo de salida no pudo iniciarse.</value>
+  </data>
+  <data name="The output device did not request any audio. Select another output in Sound &amp; display." xml:space="preserve">
+    <value>El dispositivo de salida no solicitó audio. Elija otro en Sonido y pantalla.</value>
+  </data>
+  <data name="The output device stopped responding ({0})." xml:space="preserve">
+    <value>El dispositivo de salida dejó de responder ({0}).</value>
+  </data>
+  <data name="The selected microphone is no longer available. Choose another input and retry." xml:space="preserve">
+    <value>El micrófono seleccionado ya no está disponible. Elija otra entrada y reintente.</value>
+  </data>
+  <data name="The selected output device is no longer available." xml:space="preserve">
+    <value>El dispositivo de salida seleccionado ya no está disponible.</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="This microphone's audio format is not supported." xml:space="preserve">
+    <value>El formato de audio de este micrófono no es compatible.</value>
+  </data>
+  <data name="Toggle compact mode" xml:space="preserve">
+    <value>Alternar modo compacto</value>
+  </data>
+  <data name="tracking" xml:space="preserve">
+    <value>en seguimiento</value>
+  </data>
+  <data name="Tune down" xml:space="preserve">
+    <value>Bajar</value>
+  </data>
+  <data name="Tune each course member separately" xml:space="preserve">
+    <value>Afine cada cuerda del orden por separado</value>
+  </data>
+  <data name="Tune one string at a time" xml:space="preserve">
+    <value>Afine una cuerda a la vez</value>
+  </data>
+  <data name="Tune up" xml:space="preserve">
+    <value>Subir</value>
+  </data>
+  <data name="Tuned like the top four guitar strings" xml:space="preserve">
+    <value>Como las cuatro cuerdas agudas de la guitarra</value>
+  </data>
+  <data name="Tuner" xml:space="preserve">
+    <value>Afinador</value>
+  </data>
+  <data name="Tuning name" xml:space="preserve">
+    <value>Nombre de la afinación</value>
+  </data>
+  <data name="Tuning options" xml:space="preserve">
+    <value>Opciones de afinación</value>
+  </data>
+  <data name="Tuning precision" xml:space="preserve">
+    <value>Precisión de afinación</value>
+  </data>
+  <data name="Tuning presets" xml:space="preserve">
+    <value>Afinaciones predefinidas</value>
+  </data>
+  <data name="Tunings" xml:space="preserve">
+    <value>Afinaciones</value>
+  </data>
+  <data name="Ukulele" xml:space="preserve">
+    <value>Ukelele</value>
+  </data>
+  <data name="Unlock {0} and return to automatic string detection" xml:space="preserve">
+    <value>Liberar {0} y volver a la detección automática de cuerdas</value>
+  </data>
+  <data name="unmeasured" xml:space="preserve">
+    <value>sin medir</value>
+  </data>
+  <data name="Use {0} characters or fewer for the name." xml:space="preserve">
+    <value>Use como máximo {0} caracteres para el nombre.</value>
+  </data>
+  <data name="Use for this session" xml:space="preserve">
+    <value>Usar en esta sesión</value>
+  </data>
+  <data name="Violin" xml:space="preserve">
+    <value>Violín</value>
+  </data>
+  <data name="Violin &amp; mandolin" xml:space="preserve">
+    <value>Violín y mandolina</value>
+  </data>
+  <data name="Waiting for microphone input." xml:space="preserve">
+    <value>Esperando señal del micrófono.</value>
+  </data>
+  <data name="Windows could not start audio output ({0})." xml:space="preserve">
+    <value>Windows no pudo iniciar la salida de audio ({0}).</value>
+  </data>
+  <data name="Windows could not start the audio engine ({0})." xml:space="preserve">
+    <value>Windows no pudo iniciar el motor de audio ({0}).</value>
+  </data>
+  <data name="Windows returned an incomplete output buffer." xml:space="preserve">
+    <value>Windows devolvió un búfer de salida incompleto.</value>
+  </data>
+  <data name="Live microphone spectrum, 40 Hz to 12 kHz" xml:space="preserve">
+    <value>Espectro del micrófono en directo, de 40 Hz a 12 kHz</value>
+  </data>
+</root>
