@@ -21,8 +21,8 @@ jobs:
       run:
         shell: pwsh
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
       - name: Restore locked dependencies
@@ -35,19 +35,19 @@ jobs:
         run: ./packaging/Build-Release.ps1 -NoRestore
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: TestResults/**/*.trx
           if-no-files-found: warn
       - name: Upload unpackaged Windows x64 build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Resonant-win-x64
           path: artifacts/Resonant-win-x64/
           if-no-files-found: error
       - name: Upload release packages
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Resonant-release-packages
           path: artifacts/release-*/
