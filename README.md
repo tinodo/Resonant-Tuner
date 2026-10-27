@@ -5,7 +5,7 @@
 
 A fast, accurate and fully offline instrument tuner for Windows. Pluck a string, see how far off it is, and tune with confidence. Everything is processed in memory on your device: no recording, no uploads, no accounts, no telemetry.
 
-Built with WinUI 3, C# and .NET 10.
+Built with WinUI 3, C# and .NET 10. Website: <https://tinodo.github.io/Resonant-Tuner/>
 
 ![Resonant Tuner showing the tuning dial, live spectrum and string targets](docs/screenshot.png)
 
