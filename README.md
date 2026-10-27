@@ -7,6 +7,8 @@ A fast, accurate and fully offline instrument tuner for Windows. Pluck a string,
 
 Built with WinUI 3, C# and .NET 10.
 
+![Resonant Tuner showing the tuning dial, live spectrum and string targets](docs/screenshot.png)
+
 ## Features
 
 - **Accurate pitch detection.** A YIN-style estimator with tracking and smoothing gives a steady needle and strobe, and a clear "last reading" state when the signal drops out.
