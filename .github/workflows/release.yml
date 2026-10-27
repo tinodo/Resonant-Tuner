@@ -28,8 +28,8 @@ jobs:
     env:
       RELEASE_VERSION: ${{ inputs.version }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
       - name: Validate release version
@@ -51,13 +51,13 @@ jobs:
         run: ./packaging/Build-Release.ps1 -Version $env:RELEASE_VERSION -NoRestore
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-test-results
           path: TestResults/**/*.trx
           if-no-files-found: warn
       - name: Retain release packages
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Resonant-release-packages
           path: artifacts/release-${{ inputs.version }}/
