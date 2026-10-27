@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "resonant: build-app",
-            "program": "${workspaceFolder}/src/Resonant.App/bin/Debug/net10.0-windows10.0.26100.0/win-x64/Resonant.exe",
+            "program": "${workspaceFolder}/src/Resonant.App/bin/Debug/net10.0-windows10.0.26100.0/win-x64/ResonantTuner.exe",
             "args": [],
             "cwd": "${workspaceFolder}/src/Resonant.App/bin/Debug/net10.0-windows10.0.26100.0/win-x64",
             "console": "internalConsole",

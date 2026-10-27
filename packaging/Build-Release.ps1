@@ -8,7 +8,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
 $output = Join-Path $root 'artifacts'
-$publish = Join-Path $output 'Resonant-win-x64'
+$publish = Join-Path $output 'ResonantTuner-win-x64'
 $staging = Join-Path $output 'msix-staging'
 $release = Join-Path $output "release-$Version"
 $sdkRoot = Join-Path ${env:ProgramFiles(x86)} 'Windows Kits/10/bin'
@@ -30,7 +30,7 @@ $publishArguments = @('publish', (Join-Path $root 'src/Resonant.App/Resonant.App
 if ($NoRestore) { $publishArguments += '--no-restore' }
 & dotnet @publishArguments
 if ($LASTEXITCODE -ne 0) { throw "Publish failed with exit code $LASTEXITCODE." }
-foreach ($file in @('Resonant.exe', 'Resonant.Core.dll', 'Microsoft.WindowsAppRuntime.Bootstrap.dll')) {
+foreach ($file in @('ResonantTuner.exe', 'ResonantTuner.pri', 'Resonant.Core.dll', 'Microsoft.WindowsAppRuntime.Bootstrap.dll')) {
     if (-not (Test-Path (Join-Path $publish $file))) { throw "Publish is missing $file." }
 }
 foreach ($language in @('nl', 'de', 'fr', 'es')) {
@@ -41,7 +41,7 @@ foreach ($language in @('nl', 'de', 'fr', 'es')) {
 foreach ($file in @('LICENSE', 'THIRD-PARTY-NOTICES', 'README.md')) {
     Copy-Item -LiteralPath (Join-Path $root $file) -Destination $publish
 }
-$zip = Join-Path $release "Resonant-$Version-win-x64.zip"
+$zip = Join-Path $release "ResonantTuner-$Version-win-x64.zip"
 Compress-Archive -Path "$publish/*" -DestinationPath $zip
 Copy-Item -Path "$publish/*" -Destination $staging -Recurse
 [xml]$manifest = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'Package.appxmanifest') -Raw
@@ -70,7 +70,7 @@ try {
     }
 }
 finally { $source.Dispose() }
-$msix = Join-Path $release "Resonant-$Version-win-x64.msix"
+$msix = Join-Path $release "ResonantTuner-$Version-win-x64.msix"
 & (Join-Path $sdk.FullName 'x64/MakeAppx.exe') pack /d $staging /p $msix /o
 if ($LASTEXITCODE -ne 0) { throw "MSIX packaging failed with exit code $LASTEXITCODE." }
 @($zip, $msix) | ForEach-Object {

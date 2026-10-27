@@ -43,12 +43,12 @@ jobs:
       - name: Upload unpackaged Windows x64 build
         uses: actions/upload-artifact@v7
         with:
-          name: Resonant-win-x64
-          path: artifacts/Resonant-win-x64/
+          name: ResonantTuner-win-x64
+          path: artifacts/ResonantTuner-win-x64/
           if-no-files-found: error
       - name: Upload release packages
         uses: actions/upload-artifact@v7
         with:
-          name: Resonant-release-packages
+          name: ResonantTuner-release-packages
           path: artifacts/release-*/
           if-no-files-found: error
