@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <data name=", off scale" xml:space="preserve">
+    <value>, buiten bereik</value>
+  </data>
+  <data name="'{0}' is not a note with an octave, for example E2 or F#3." xml:space="preserve">
+    <value>'{0}' is geen noot met octaaf, zoals E2 of F#3.</value>
+  </data>
+  <data name="{0:0.0} cents {1}{2}" xml:space="preserve">
+    <value>{0:0.0} cent {1}{2}</value>
+  </data>
+  <data name="{0} · {1} strings · {2}" xml:space="preserve">
+    <value>{0} · {1} snaren · {2}</value>
+  </data>
+  <data name="{0} (default)" xml:space="preserve">
+    <value>{0} (standaard)</value>
+  </data>
+  <data name="{0} {1}, {2} strings: {3}" xml:space="preserve">
+    <value>{0} {1}, {2} snaren: {3}</value>
+  </data>
+  <data name="{0} {1}, target {2}, confidence {3}" xml:space="preserve">
+    <value>{0} {1}, doel {2}, betrouwbaarheid {3}</value>
+  </data>
+  <data name="{0} input and {1} output devices found." xml:space="preserve">
+    <value>{0} invoer- en {1} uitvoerapparaten gevonden.</value>
+  </data>
+  <data name="{0} is outside the {1:0}–{2:0} Hz range this tuner can measure." xml:space="preserve">
+    <value>{0} valt buiten het meetbereik van {1:0}–{2:0} Hz.</value>
+  </data>
+  <data name="{0}, {1}, {2}, {3}" xml:space="preserve">
+    <value>{0}, {1}, {2}, {3}</value>
+  </data>
+  <data name="All instruments" xml:space="preserve">
+    <value>Alle instrumenten</value>
+  </data>
+  <data name="Audio device could not be changed: " xml:space="preserve">
+    <value>Audioapparaat kon niet worden gewijzigd: </value>
+  </data>
+  <data name="Audio device selection updated." xml:space="preserve">
+    <value>Audioapparaatkeuze bijgewerkt.</value>
+  </data>
+  <data name="Audio devices could not be listed: " xml:space="preserve">
+    <value>Audioapparaten konden niet worden weergegeven: </value>
+  </data>
+  <data name="Audio rendering failed: {0}" xml:space="preserve">
+    <value>Audioweergave mislukt: {0}</value>
+  </data>
+  <data name="Auto string" xml:space="preserve">
+    <value>Automatische snaar</value>
+  </data>
+  <data name="Baritone" xml:space="preserve">
+    <value>Bariton</value>
+  </data>
+  <data name="Bass" xml:space="preserve">
+    <value>Basgitaar</value>
+  </data>
+  <data name="Bass, 4 strings" xml:space="preserve">
+    <value>Basgitaar, 4 snaren</value>
+  </data>
+  <data name="Bass, low B at 30.8677 Hz" xml:space="preserve">
+    <value>Basgitaar, lage B op 30,8677 Hz</value>
+  </data>
+  <data name="Capo" xml:space="preserve">
+    <value>Capo</value>
+  </data>
+  <data name="cents" xml:space="preserve">
+    <value>cent</value>
+  </data>
+  <data name="Channel 1 (first)" xml:space="preserve">
+    <value>Kanaal 1 (eerste)</value>
+  </data>
+  <data name="Channel 2" xml:space="preserve">
+    <value>Kanaal 2</value>
+  </data>
+  <data name="Channel 3" xml:space="preserve">
+    <value>Kanaal 3</value>
+  </data>
+  <data name="Channel 4" xml:space="preserve">
+    <value>Kanaal 4</value>
+  </data>
+  <data name="Channel 5" xml:space="preserve">
+    <value>Kanaal 5</value>
+  </data>
+  <data name="Channel 6" xml:space="preserve">
+    <value>Kanaal 6</value>
+  </data>
+  <data name="Channel 7" xml:space="preserve">
+    <value>Kanaal 7</value>
+  </data>
+  <data name="Channel 8" xml:space="preserve">
+    <value>Kanaal 8</value>
+  </data>
+  <data name="Check the tuning" xml:space="preserve">
+    <value>Controleer de stemming</value>
+  </data>
+  <data name="Choose between {0} and {1} strings." xml:space="preserve">
+    <value>Kies tussen {0} en {1} snaren.</value>
+  </data>
+  <data name="Chromatic" xml:space="preserve">
+    <value>Chromatisch</value>
+  </data>
+  <data name="Clipping detected. Lower the input gain or move away from the microphone." xml:space="preserve">
+    <value>Oversturing gedetecteerd. Verlaag de versterking of vergroot de afstand tot de microfoon.</value>
+  </data>
+  <data name="Compact mode" xml:space="preserve">
+    <value>Compacte weergave</value>
+  </data>
+  <data name="Compact window" xml:space="preserve">
+    <value>Compact venster</value>
+  </data>
+  <data name="Custom tuning · this session only" xml:space="preserve">
+    <value>Eigen stemming · alleen deze sessie</value>
+  </data>
+  <data name="Custom tuning editor" xml:space="preserve">
+    <value>Eigen stemming bewerken</value>
+  </data>
+  <data name="Custom tunings" xml:space="preserve">
+    <value>Eigen stemmingen</value>
+  </data>
+  <data name="Custom tunings are never saved. Your edit is kept only until you close Resonant Tuner, and it is not applied until you choose Use for this session." xml:space="preserve">
+    <value>Eigen stemmingen worden niet opgeslagen. Je bewerking blijft tot Resonant Tuner sluit en wordt pas toegepast met Voor deze sessie gebruiken.</value>
+  </data>
+  <data name="Custom tunings reset when Resonant Tuner closes." xml:space="preserve">
+    <value>Eigen stemmingen vervallen bij het sluiten van Resonant Tuner.</value>
+  </data>
+  <data name="DADGAD" xml:space="preserve">
+    <value>DADGAD</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Donker</value>
+  </data>
+  <data name="Detected note" xml:space="preserve">
+    <value>Gedetecteerde noot</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Weergave</value>
+  </data>
+  <data name="Drop D" xml:space="preserve">
+    <value>Drop D</value>
+  </data>
+  <data name="Enable access in Windows Settings, then retry." xml:space="preserve">
+    <value>Schakel toegang in via Windows-instellingen en probeer opnieuw.</value>
+  </data>
+  <data name="Enter a name for the tuning." xml:space="preserve">
+    <value>Voer een naam in voor de stemming.</value>
+  </data>
+  <data name="Enter at least one string target such as E2." xml:space="preserve">
+    <value>Voer minstens één snaardoel in, zoals E2.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="Every string one semitone lower" xml:space="preserve">
+    <value>Elke snaar een halve toon lager</value>
+  </data>
+  <data name="Expected {0} targets but found {1}." xml:space="preserve">
+    <value>{0} doelnoten verwacht, maar {1} gevonden.</value>
+  </data>
+  <data name="Fair" xml:space="preserve">
+    <value>Redelijk</value>
+  </data>
+  <data name="flat" xml:space="preserve">
+    <value>te laag</value>
+  </data>
+  <data name="Flats (Db)" xml:space="preserve">
+    <value>Mollen (Db)</value>
+  </data>
+  <data name="Good" xml:space="preserve">
+    <value>Goed</value>
+  </data>
+  <data name="Guitar" xml:space="preserve">
+    <value>Gitaar</value>
+  </data>
+  <data name="Half-step down" xml:space="preserve">
+    <value>Halve toon lager</value>
+  </data>
+  <data name="High G" xml:space="preserve">
+    <value>Hoge G</value>
+  </data>
+  <data name="High input level. Leave more headroom by lowering the gain or moving back." xml:space="preserve">
+    <value>Hoog ingangsniveau. Verlaag de versterking of neem meer afstand.</value>
+  </data>
+  <data name="Hold steady" xml:space="preserve">
+    <value>Vasthouden</value>
+  </data>
+  <data name="If the selected input channel is unavailable, channel 1 is used." xml:space="preserve">
+    <value>Als het gekozen invoerkanaal ontbreekt, wordt kanaal 1 gebruikt.</value>
+  </data>
+  <data name="PitchInTune" xml:space="preserve">
+    <value>zuiver</value>
+  </data>
+  <data name="In tune" xml:space="preserve">
+    <value>Zuiver</value>
+  </data>
+  <data name="In-tune tolerance (cents)" xml:space="preserve">
+    <value>Stemtolerantie (cent)</value>
+  </data>
+  <data name="Input channel" xml:space="preserve">
+    <value>Invoerkanaal</value>
+  </data>
+  <data name="Input clipping" xml:space="preserve">
+    <value>Invoer overstuurd</value>
+  </data>
+  <data name="Input device" xml:space="preserve">
+    <value>Invoerapparaat</value>
+  </data>
+  <data name="Input is clipping. Move back from the microphone or lower the input level." xml:space="preserve">
+    <value>Invoer is overstuurd. Vergroot de afstand of verlaag het ingangsniveau.</value>
+  </data>
+  <data name="Input too loud" xml:space="preserve">
+    <value>Invoer te luid</value>
+  </data>
+  <data name="Input: selected device" xml:space="preserve">
+    <value>Invoer: gekozen apparaat</value>
+  </data>
+  <data name="Input: system default" xml:space="preserve">
+    <value>Invoer: systeemstandaard</value>
+  </data>
+  <data name="Follow Windows" xml:space="preserve">
+    <value>Windows volgen</value>
+  </data>
+  <data name="Interface language" xml:space="preserve">
+    <value>Interfacetaal</value>
+  </data>
+  <data name="Instrument" xml:space="preserve">
+    <value>Instrument</value>
+  </data>
+  <data name="Instrument filter" xml:space="preserve">
+    <value>Instrumentfilter</value>
+  </data>
+  <data name="Instrument library" xml:space="preserve">
+    <value>Instrumentenbibliotheek</value>
+  </data>
+  <data name="Instrument tuning" xml:space="preserve">
+    <value>Instrumentstemming</value>
+  </data>
+  <data name="Keep editing" xml:space="preserve">
+    <value>Verder bewerken</value>
+  </data>
+  <data name="Keep on top of other windows" xml:space="preserve">
+    <value>Boven andere vensters houden</value>
+  </data>
+  <data name="Keyboard" xml:space="preserve">
+    <value>Toetsenbord</value>
+  </data>
+  <data name="Last reading" xml:space="preserve">
+    <value>Laatste meting</value>
+  </data>
+  <data name="Last reading · {0}" xml:space="preserve">
+    <value>Laatste meting · {0}</value>
+  </data>
+  <data name="last reading, no current pitch" xml:space="preserve">
+    <value>laatste meting, geen actuele toonhoogte</value>
+  </data>
+  <data name="Leave" xml:space="preserve">
+    <value>Verlaten</value>
+  </data>
+  <data name="Leave this custom tuning?" xml:space="preserve">
+    <value>Deze eigen stemming verlaten?</value>
+  </data>
+  <data name="Light" xml:space="preserve">
+    <value>Licht</value>
+  </data>
+  <data name="Linear physical string order" xml:space="preserve">
+    <value>Oplopende fysieke snaarvolgorde</value>
+  </data>
+  <data name="Listening" xml:space="preserve">
+    <value>Luisteren</value>
+  </data>
+  <data name="Listening is paused" xml:space="preserve">
+    <value>Luisteren is gepauzeerd</value>
+  </data>
+  <data name="Lock a string (string 1 to 9)" xml:space="preserve">
+    <value>Snaar vastzetten (snaar 1 tot 9)</value>
+  </data>
+  <data name="Lock target to {0}" xml:space="preserve">
+    <value>Doel vastzetten op {0}</value>
+  </data>
+  <data name="StringLocked" xml:space="preserve">
+    <value>vergrendeld</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Vergrendeld</value>
+  </data>
+  <data name="Low G" xml:space="preserve">
+    <value>Lage G</value>
+  </data>
+  <data name="Low string one whole step down" xml:space="preserve">
+    <value>Laagste snaar een hele toon lager</value>
+  </data>
+  <data name="Lowest string to highest" xml:space="preserve">
+    <value>Van laagste naar hoogste snaar</value>
+  </data>
+  <data name="Mandolin" xml:space="preserve">
+    <value>Mandoline</value>
+  </data>
+  <data name="Measured" xml:space="preserve">
+    <value>Gemeten</value>
+  </data>
+  <data name="Microphone access is off" xml:space="preserve">
+    <value>Microfoontoegang is uitgeschakeld</value>
+  </data>
+  <data name="Microphone access is off. Enable access in Windows Settings, then retry." xml:space="preserve">
+    <value>Microfoontoegang is uitgeschakeld. Schakel deze in via Windows-instellingen en probeer opnieuw.</value>
+  </data>
+  <data name="Microphone input level" xml:space="preserve">
+    <value>Microfooningangsniveau</value>
+  </data>
+  <data name="Microphone is off" xml:space="preserve">
+    <value>Microfoon is uit</value>
+  </data>
+  <data name="Microphone is off." xml:space="preserve">
+    <value>Microfoon is uit.</value>
+  </data>
+  <data name="Microphone lost" xml:space="preserve">
+    <value>Microfoonverbinding verloren</value>
+  </data>
+  <data name="Microphone paused while the reference tone plays." xml:space="preserve">
+    <value>Microfoon gepauzeerd tijdens de referentietoon.</value>
+  </data>
+  <data name="Microphone settings" xml:space="preserve">
+    <value>Microfooninstellingen</value>
+  </data>
+  <data name="Microphone unavailable" xml:space="preserve">
+    <value>Microfoon niet beschikbaar</value>
+  </data>
+  <data name="My open tuning" xml:space="preserve">
+    <value>Mijn open stemming</value>
+  </data>
+  <data name="No custom tunings" xml:space="preserve">
+    <value>Geen eigen stemmingen</value>
+  </data>
+  <data name="No microphone was found. Connect an input device, then retry." xml:space="preserve">
+    <value>Geen microfoon gevonden. Sluit een invoerapparaat aan en probeer opnieuw.</value>
+  </data>
+  <data name="No signal" xml:space="preserve">
+    <value>Geen signaal</value>
+  </data>
+  <data name="No signal. Pluck one string and let it ring." xml:space="preserve">
+    <value>Geen signaal. Sla één snaar aan en laat die uitklinken.</value>
+  </data>
+  <data name="Normal input level. Pitch confidence is shown separately." xml:space="preserve">
+    <value>Normaal ingangsniveau. De toonhoogtebetrouwbaarheid wordt apart getoond.</value>
+  </data>
+  <data name="Note spelling" xml:space="preserve">
+    <value>Nootnotatie</value>
+  </data>
+  <data name="Number of strings" xml:space="preserve">
+    <value>Aantal snaren</value>
+  </data>
+  <data name="Octaves matter. Repeated notes are allowed. Use 1 to 12 strings." xml:space="preserve">
+    <value>Octaven tellen mee. Herhaalde noten zijn toegestaan. Gebruik 1 tot 12 snaren.</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Uit</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Aan</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Openen</value>
+  </data>
+  <data name="Open D" xml:space="preserve">
+    <value>Open D</value>
+  </data>
+  <data name="Open D major" xml:space="preserve">
+    <value>Open D-majeur</value>
+  </data>
+  <data name="Open G" xml:space="preserve">
+    <value>Open G</value>
+  </data>
+  <data name="Open G major" xml:space="preserve">
+    <value>Open G-majeur</value>
+  </data>
+  <data name="Open suspended tuning" xml:space="preserve">
+    <value>Open suspended-stemming</value>
+  </data>
+  <data name="Open Windows microphone settings" xml:space="preserve">
+    <value>Windows-microfooninstellingen openen</value>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pauze</value>
+  </data>
+  <data name="Pause listening" xml:space="preserve">
+    <value>Luisteren pauzeren</value>
+  </data>
+  <data name="Paused" xml:space="preserve">
+    <value>Gepauzeerd</value>
+  </data>
+  <data name="Pitch confidence" xml:space="preserve">
+    <value>Betrouwbaarheid van toonhoogte</value>
+  </data>
+  <data name="Pitch is unclear. Mute the other strings and let one ring." xml:space="preserve">
+    <value>Toonhoogte onduidelijk. Demp de andere snaren en laat er één klinken.</value>
+  </data>
+  <data name="Pitch meter: {0}" xml:space="preserve">
+    <value>Toonhoogtemeter: {0}</value>
+  </data>
+  <data name="Pitch meter: no pitch detected" xml:space="preserve">
+    <value>Toonhoogtemeter: geen toonhoogte gedetecteerd</value>
+  </data>
+  <data name="Pitch unclear" xml:space="preserve">
+    <value>Toonhoogte onduidelijk</value>
+  </data>
+  <data name="Pluck one string" xml:space="preserve">
+    <value>Sla één snaar aan</value>
+  </data>
+  <data name="Quiet input. A clean note may still be detected; move closer if detection is unreliable." xml:space="preserve">
+    <value>Zachte invoer. Een heldere noot kan nog worden herkend; kom dichterbij als herkenning onbetrouwbaar is.</value>
+  </data>
+  <data name="Re-entrant physical string order" xml:space="preserve">
+    <value>Fysieke snaarvolgorde met hoge G</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Gereed</value>
+  </data>
+  <data name="Reference  A4 = {0:0.#} Hz" xml:space="preserve">
+    <value>Referentie  A4 = {0:0.#} Hz</value>
+  </data>
+  <data name="Reference {0}" xml:space="preserve">
+    <value>Referentie {0}</value>
+  </data>
+  <data name="Reference A4 (Hz)" xml:space="preserve">
+    <value>Referentie A4 (Hz)</value>
+  </data>
+  <data name="Reference output" xml:space="preserve">
+    <value>Uitvoer referentietoon</value>
+  </data>
+  <data name="Reference tone" xml:space="preserve">
+    <value>Referentietoon</value>
+  </data>
+  <data name="Reference tone stopped: " xml:space="preserve">
+    <value>Referentietoon gestopt: </value>
+  </data>
+  <data name="Reference tone unavailable: " xml:space="preserve">
+    <value>Referentietoon niet beschikbaar: </value>
+  </data>
+  <data name="Reference tone unavailable: {0}" xml:space="preserve">
+    <value>Referentietoon niet beschikbaar: {0}</value>
+  </data>
+  <data name="Refresh devices" xml:space="preserve">
+    <value>Apparaten vernieuwen</value>
+  </data>
+  <data name="Remove custom tuning" xml:space="preserve">
+    <value>Eigen stemming verwijderen</value>
+  </data>
+  <data name="Remove tuning" xml:space="preserve">
+    <value>Stemming verwijderen</value>
+  </data>
+  <data name="Requesting microphone" xml:space="preserve">
+    <value>Microfoontoegang aanvragen</value>
+  </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Herstellen</value>
+  </data>
+  <data name="Restore window size" xml:space="preserve">
+    <value>Venstergrootte herstellen</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Hervat</value>
+  </data>
+  <data name="Resume listening" xml:space="preserve">
+    <value>Luisteren hervatten</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Opnieuw proberen</value>
+  </data>
+  <data name="Session only. Not saved after closing." xml:space="preserve">
+    <value>Alleen deze sessie. Niet bewaard na sluiten.</value>
+  </data>
+  <data name="Settings reset when Resonant Tuner closes." xml:space="preserve">
+    <value>Instellingen vervallen bij het sluiten van Resonant Tuner.</value>
+  </data>
+  <data name="sharp" xml:space="preserve">
+    <value>te hoog</value>
+  </data>
+  <data name="Sharps (C#)" xml:space="preserve">
+    <value>Kruisen (C#)</value>
+  </data>
+  <data name="Sound &amp; display" xml:space="preserve">
+    <value>Geluid &amp; weergave</value>
+  </data>
+  <data name="Sound input" xml:space="preserve">
+    <value>Geluidsinvoer</value>
+  </data>
+  <data name="Space" xml:space="preserve">
+    <value>Spatie</value>
+  </data>
+  <data name="Spectrum" xml:space="preserve">
+    <value>Spectrum</value>
+  </data>
+  <data name="Stable" xml:space="preserve">
+    <value>Stabiel</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="Standard five-string" xml:space="preserve">
+    <value>Standaard vijf snaren</value>
+  </data>
+  <data name="Standard four-string" xml:space="preserve">
+    <value>Standaard vier snaren</value>
+  </data>
+  <data name="Start / stop listening" xml:space="preserve">
+    <value>Luisteren starten / stoppen</value>
+  </data>
+  <data name="Starting microphone" xml:space="preserve">
+    <value>Microfoon starten</value>
+  </data>
+  <data name="Stop reference tone" xml:space="preserve">
+    <value>Referentietoon stoppen</value>
+  </data>
+  <data name="Stopped" xml:space="preserve">
+    <value>Gestopt</value>
+  </data>
+  <data name="STRING {0}" xml:space="preserve">
+    <value>SNAAR {0}</value>
+  </data>
+  <data name="String targets" xml:space="preserve">
+    <value>Doelnoten per snaar</value>
+  </data>
+  <data name="String targets, in physical string order" xml:space="preserve">
+    <value>Doelnoten in fysieke snaarvolgorde</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Systeem</value>
+  </data>
+  <data name="System default input" xml:space="preserve">
+    <value>Standaardinvoer van het systeem</value>
+  </data>
+  <data name="System default output" xml:space="preserve">
+    <value>Standaarduitvoer van het systeem</value>
+  </data>
+  <data name="Target" xml:space="preserve">
+    <value>Doel</value>
+  </data>
+  <data name="The audio engine runs at {0} Hz; this tuner needs at least {1} Hz." xml:space="preserve">
+    <value>De audio-engine werkt op {0} Hz; deze stemmer vereist minstens {1} Hz.</value>
+  </data>
+  <data name="The audio input stopped unexpectedly." xml:space="preserve">
+    <value>De audio-invoer is onverwacht gestopt.</value>
+  </data>
+  <data name="The default microphone changed. Press Start to listen on the new device." xml:space="preserve">
+    <value>De standaardmicrofoon is gewijzigd. Kies Opnieuw proberen om de nieuwe te gebruiken.</value>
+  </data>
+  <data name="The input is clipping, so the pitch may be wrong. Lower the input level or move back." xml:space="preserve">
+    <value>De invoer is overstuurd; de toonhoogte kan onjuist zijn. Verlaag het niveau of neem afstand.</value>
+  </data>
+  <data name="The microphone could not be opened ({0})." xml:space="preserve">
+    <value>De microfoon kon niet worden geopend ({0}).</value>
+  </data>
+  <data name="The microphone could not be started: {0}" xml:space="preserve">
+    <value>De microfoon kon niet worden gestart: {0}</value>
+  </data>
+  <data name="The microphone could not be started." xml:space="preserve">
+    <value>De microfoon kon niet worden gestart.</value>
+  </data>
+  <data name="The microphone is unavailable or in use. Close other apps using it, then retry." xml:space="preserve">
+    <value>De microfoon is niet beschikbaar of bezet. Sluit andere apps die deze gebruiken en probeer opnieuw.</value>
+  </data>
+  <data name="The microphone is unavailable." xml:space="preserve">
+    <value>De microfoon is niet beschikbaar.</value>
+  </data>
+  <data name="The microphone stopped responding. Reconnect it, then press Start." xml:space="preserve">
+    <value>De microfoon reageert niet meer. Sluit deze opnieuw aan en kies Opnieuw proberen.</value>
+  </data>
+  <data name="The output device could not be opened ({0})." xml:space="preserve">
+    <value>Het uitvoerapparaat kon niet worden geopend ({0}).</value>
+  </data>
+  <data name="the output device could not start." xml:space="preserve">
+    <value>het uitvoerapparaat kon niet starten.</value>
+  </data>
+  <data name="The output device did not request any audio. Select another output in Sound &amp; display." xml:space="preserve">
+    <value>Het uitvoerapparaat vroeg geen audio op. Kies een andere uitvoer bij Geluid &amp; weergave.</value>
+  </data>
+  <data name="The output device stopped responding ({0})." xml:space="preserve">
+    <value>Het uitvoerapparaat reageert niet meer ({0}).</value>
+  </data>
+  <data name="The selected microphone is no longer available. Choose another input and retry." xml:space="preserve">
+    <value>De gekozen microfoon is niet meer beschikbaar. Kies een andere invoer en probeer opnieuw.</value>
+  </data>
+  <data name="The selected output device is no longer available." xml:space="preserve">
+    <value>Het gekozen uitvoerapparaat is niet meer beschikbaar.</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Thema</value>
+  </data>
+  <data name="This microphone's audio format is not supported." xml:space="preserve">
+    <value>Het audioformaat van deze microfoon wordt niet ondersteund.</value>
+  </data>
+  <data name="Toggle compact mode" xml:space="preserve">
+    <value>Compacte weergave wisselen</value>
+  </data>
+  <data name="tracking" xml:space="preserve">
+    <value>gevolgd</value>
+  </data>
+  <data name="Tune down" xml:space="preserve">
+    <value>Lager stemmen</value>
+  </data>
+  <data name="Tune each course member separately" xml:space="preserve">
+    <value>Stem elke snaar van een koor apart</value>
+  </data>
+  <data name="Tune one string at a time" xml:space="preserve">
+    <value>Stem één snaar tegelijk</value>
+  </data>
+  <data name="Tune up" xml:space="preserve">
+    <value>Hoger stemmen</value>
+  </data>
+  <data name="Tuned like the top four guitar strings" xml:space="preserve">
+    <value>Als de vier hoogste gitaarsnaren</value>
+  </data>
+  <data name="Tuner" xml:space="preserve">
+    <value>Stemmer</value>
+  </data>
+  <data name="Tuning name" xml:space="preserve">
+    <value>Naam van de stemming</value>
+  </data>
+  <data name="Tuning options" xml:space="preserve">
+    <value>Stemopties</value>
+  </data>
+  <data name="Tuning precision" xml:space="preserve">
+    <value>Stemnauwkeurigheid</value>
+  </data>
+  <data name="Tuning presets" xml:space="preserve">
+    <value>Stempresets</value>
+  </data>
+  <data name="Tunings" xml:space="preserve">
+    <value>Stemmingen</value>
+  </data>
+  <data name="Ukulele" xml:space="preserve">
+    <value>Ukelele</value>
+  </data>
+  <data name="Unlock {0} and return to automatic string detection" xml:space="preserve">
+    <value>Ontgrendel {0} en herstel automatische snaardetectie</value>
+  </data>
+  <data name="unmeasured" xml:space="preserve">
+    <value>niet gemeten</value>
+  </data>
+  <data name="Use {0} characters or fewer for the name." xml:space="preserve">
+    <value>Gebruik maximaal {0} tekens voor de naam.</value>
+  </data>
+  <data name="Use for this session" xml:space="preserve">
+    <value>Voor deze sessie gebruiken</value>
+  </data>
+  <data name="Violin" xml:space="preserve">
+    <value>Viool</value>
+  </data>
+  <data name="Violin &amp; mandolin" xml:space="preserve">
+    <value>Viool &amp; mandoline</value>
+  </data>
+  <data name="Waiting for microphone input." xml:space="preserve">
+    <value>Wachten op microfooninvoer.</value>
+  </data>
+  <data name="Windows could not start audio output ({0})." xml:space="preserve">
+    <value>Windows kon de audio-uitvoer niet starten ({0}).</value>
+  </data>
+  <data name="Windows could not start the audio engine ({0})." xml:space="preserve">
+    <value>Windows kon de audio-engine niet starten ({0}).</value>
+  </data>
+  <data name="Windows returned an incomplete output buffer." xml:space="preserve">
+    <value>Windows gaf een onvolledige uitvoerbuffer terug.</value>
+  </data>
+  <data name="Live microphone spectrum, 40 Hz to 12 kHz" xml:space="preserve">
+    <value>Live microfoonspectrum, 40 Hz tot 12 kHz</value>
+  </data>
+</root>

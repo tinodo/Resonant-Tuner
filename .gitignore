@@ -1,0 +1,42 @@
+## Build output
+bin/
+obj/
+artifacts/
+publish/
+AppPackages/
+BundleArtifacts/
+*.msix
+*.msixbundle
+*.appx
+
+## Test and coverage output
+TestResults/
+*.trx
+*.coverage
+coverage/
+
+## IDE
+.vs/
+*.user
+*.suo
+*.userosscache
+*.csproj.user
+
+## Signing material (never commit)
+*.pfx
+*.snk
+*.p12
+*.cer
+
+## Local environment files
+.env
+.env.*
+local.settings.json
+.vscode/settings.json
+
+## Throwaway planning mock-ups
+.azure/.preview-temp/
+
+## OS
+Thumbs.db
+.DS_Store

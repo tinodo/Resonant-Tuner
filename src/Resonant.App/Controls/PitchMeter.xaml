@@ -1,0 +1,71 @@
+<UserControl
+    x:Class="Resonant.App.Controls.PitchMeter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    IsTabStop="False">
+
+    <Viewbox Stretch="Uniform" StretchDirection="DownOnly">
+        <Canvas x:Name="MeterCanvas" Width="520" Height="440">
+            <Canvas x:Name="DialScale" Opacity="0.85">
+            <Ellipse Canvas.Left="76" Canvas.Top="36" Width="368" Height="368"
+                   Stroke="{ThemeResource ResonantBorderBrush}" StrokeThickness="1" Opacity="0.65" />
+            <Ellipse Canvas.Left="107" Canvas.Top="67" Width="306" Height="306"
+                   Stroke="{ThemeResource ResonantPrimaryBrush}" StrokeThickness="1" Opacity="0.22" />
+            <Path Data="M60,220 A200,200 0 0 1 460,220"
+                Stroke="{ThemeResource ResonantPrimaryBrush}" StrokeThickness="10" Opacity="0.08"
+                StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            <Path Data="M60,220 A200,200 0 0 1 460,220"
+                Stroke="{ThemeResource ResonantPrimaryBrush}" StrokeThickness="3" Opacity="0.75"
+                StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            <Path Data="M70,220 A190,190 0 0 1 450,220"
+                Stroke="{ThemeResource ResonantSecondaryBrush}" StrokeThickness="1" Opacity="0.55"
+                StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            <Path Data="M246,20.5 A200,200 0 0 1 274,20.5"
+                Stroke="{ThemeResource ResonantPrimaryBrush}" StrokeThickness="5"
+                StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            <Path x:Name="MinorTicks" Stroke="{ThemeResource ResonantMutedBrush}" StrokeThickness="1" Opacity="0.45" />
+            <Path x:Name="ScaleTicks" Stroke="{ThemeResource ResonantMutedBrush}" StrokeThickness="1.5" />
+            <Path Data="M260,9 L260,31" Stroke="{ThemeResource ResonantPrimaryBrush}" StrokeThickness="2"
+                StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            </Canvas>
+            <Canvas x:Name="NeedleAccent" Visibility="Collapsed">
+                <Canvas.RenderTransform>
+                    <RotateTransform x:Name="AccentRotation" CenterX="260" CenterY="220" />
+                </Canvas.RenderTransform>
+                <Path Data="M260,220 L260,57" Stroke="{ThemeResource ResonantAccentBrush}"
+                      StrokeThickness="4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            </Canvas>
+            <Canvas x:Name="NeedlePrimary" Visibility="Collapsed">
+                <Canvas.RenderTransform>
+                    <RotateTransform x:Name="PrimaryRotation" CenterX="260" CenterY="220" />
+                </Canvas.RenderTransform>
+                <Path Data="M260,220 L260,57" Stroke="{ThemeResource ResonantPrimaryBrush}"
+                      StrokeThickness="4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            </Canvas>
+            <Canvas x:Name="NeedleRetained" Visibility="Collapsed" Opacity="0.6">
+                <Canvas.RenderTransform>
+                    <RotateTransform x:Name="RetainedRotation" CenterX="260" CenterY="220" />
+                </Canvas.RenderTransform>
+                <Path Data="M260,220 L260,57" Stroke="{ThemeResource ResonantMutedBrush}"
+                      StrokeThickness="4" StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+            </Canvas>
+            <Canvas x:Name="NeedleHub" Visibility="Collapsed">
+                <Ellipse Canvas.Left="250" Canvas.Top="210" Width="20" Height="20"
+                         Fill="{ThemeResource ResonantSurfaceBrush}" Stroke="{ThemeResource ResonantMutedBrush}" StrokeThickness="1.5" />
+                <Ellipse Canvas.Left="256" Canvas.Top="216" Width="8" Height="8"
+                         Fill="{ThemeResource ResonantPrimaryBrush}" />
+            </Canvas>
+            <Canvas x:Name="StrobeClip" Canvas.Left="40" Canvas.Top="408" Width="440" Height="24" Visibility="Collapsed">
+                <Canvas.Clip><RectangleGeometry Rect="0,0,440,24" /></Canvas.Clip>
+                <Path x:Name="StrobeStripes" Fill="{ThemeResource ResonantPrimaryBrush}">
+                    <Path.RenderTransform><TranslateTransform x:Name="StrobeShift" /></Path.RenderTransform>
+                </Path>
+            </Canvas>
+            <Polygon x:Name="OffScaleLeft" Points="43,200 53,190 53,210" Fill="{ThemeResource ResonantAccentBrush}" Visibility="Collapsed" />
+            <Polygon x:Name="OffScaleRight" Points="477,200 467,190 467,210" Fill="{ThemeResource ResonantAccentBrush}" Visibility="Collapsed" />
+            <TextBlock Text="-50" Canvas.Left="0" Canvas.Top="148" FontSize="19" Foreground="{ThemeResource ResonantMutedBrush}" />
+            <TextBlock Text="+50" Canvas.Left="480" Canvas.Top="148" FontSize="19" Foreground="{ThemeResource ResonantMutedBrush}" />
+            <TextBlock Text="0" Canvas.Left="250" Canvas.Top="43" Width="20" TextAlignment="Center" FontSize="14" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+        </Canvas>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,185 @@
+<Page
+    x:Class="Resonant.App.Views.TuningsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Resonant.Core.Localization"
+    xmlns:vm="using:Resonant.App.ViewModels"
+    NavigationCacheMode="Required"
+    Background="Transparent">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Wide">
+                        <VisualState.StateTriggers><AdaptiveTrigger MinWindowWidth="800" /></VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="EditorColumn.Width" Value="*" />
+                            <Setter Target="EditorSections.(Grid.Column)" Value="1" />
+                            <Setter Target="EditorSections.(Grid.Row)" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Narrow">
+                        <VisualState.StateTriggers><AdaptiveTrigger MinWindowWidth="0" /></VisualState.StateTriggers>
+                        <VisualState.Setters><Setter Target="LayoutRoot.Padding" Value="16,12" /></VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+        <Grid x:Name="LayoutRoot" MaxWidth="1100" Padding="24,16" RowSpacing="16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{x:Bind loc:Text.Get('Tunings')}" Style="{StaticResource ResonantHeadingStyle}" FontSize="24" AutomationProperties.HeadingLevel="Level1" />
+                    <TextBlock Text="{x:Bind ViewModel.CalibrationText, Mode=OneWay}" Style="{StaticResource ResonantMutedStyle}" FontSize="12" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" ColumnSpacing="16" RowSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.3*" />
+                    <ColumnDefinition x:Name="EditorColumn" Width="0" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Instrument library -->
+                <Border Style="{StaticResource ResonantPanelStyle}" VerticalAlignment="Top">
+                    <StackPanel Spacing="14">
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <FontIcon Glyph="&#xE8FD;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                            <TextBlock Text="{x:Bind loc:Text.Get('Instrument library')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                        </StackPanel>
+
+                        <ComboBox x:Name="FilterBar" Header="{x:Bind loc:Text.Get('Instrument')}" HorizontalAlignment="Stretch" SelectedIndex="0"
+                                  SelectionChanged="OnFilterChanged" AutomationProperties.Name="{x:Bind loc:Text.Get('Instrument filter')}">
+                            <ComboBoxItem Content="{x:Bind loc:Text.Get('All instruments')}" Tag="all" />
+                            <ComboBoxItem Content="{x:Bind loc:Text.Get('Guitar')}" Tag="guitar" />
+                            <ComboBoxItem Content="{x:Bind loc:Text.Get('Ukulele')}" Tag="ukulele" />
+                            <ComboBoxItem Content="{x:Bind loc:Text.Get('Bass')}" Tag="bass" />
+                            <ComboBoxItem Content="{x:Bind loc:Text.Get('Violin &amp; mandolin')}" Tag="bowed" />
+                        </ComboBox>
+
+                        <ListView x:Name="PresetList"
+                                  MaxHeight="360"
+                                  ItemsSource="{x:Bind ViewModel.Presets}"
+                                  SelectionMode="Single"
+                                  SelectionChanged="OnPresetSelectionChanged"
+                                  AutomationProperties.Name="{x:Bind loc:Text.Get('Tuning presets')}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="vm:PresetItemViewModel">
+                                    <Grid ColumnSpacing="12" Padding="0,8" AutomationProperties.Name="{x:Bind AutomationName}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <FontIcon Glyph="{x:Bind IconGlyph}" Foreground="{ThemeResource ResonantMutedBrush}" VerticalAlignment="Center" />
+                                        <StackPanel Grid.Column="1" Spacing="2">
+                                            <TextBlock Text="{x:Bind Title}" TextWrapping="Wrap" FontWeight="SemiBold" Foreground="{ThemeResource ResonantTextBrush}" />
+                                            <TextBlock Text="{x:Bind Subtitle}" TextWrapping="Wrap" FontSize="12" Style="{StaticResource ResonantMutedStyle}" />
+                                            <TextBlock Text="{x:Bind Notes}" TextWrapping="Wrap" FontSize="13" Style="{StaticResource ResonantNumericStyle}" />
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackPanel>
+                </Border>
+
+                <StackPanel x:Name="EditorSections" Grid.Row="1" Spacing="16" VerticalAlignment="Top">
+
+                    <!-- Custom tunings (session only) -->
+                    <Border Style="{StaticResource ResonantPanelStyle}">
+                        <StackPanel Spacing="12">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <FontIcon Glyph="&#xE710;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Custom tunings')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                            </StackPanel>
+
+                            <StackPanel Spacing="6" HorizontalAlignment="Center"
+                                        Visibility="{x:Bind ViewModel.NoCustomVisibility, Mode=OneWay}">
+                                <TextBlock Text="{x:Bind loc:Text.Get('No custom tunings')}" TextWrapping="Wrap" FontWeight="SemiBold" HorizontalAlignment="Center"
+                                           Foreground="{ThemeResource ResonantTextBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Custom tunings reset when Resonant Tuner closes.')}"
+                                           Style="{StaticResource ResonantMutedStyle}" FontSize="12" TextAlignment="Center" />
+                            </StackPanel>
+
+                            <ItemsControl ItemsSource="{x:Bind ViewModel.CustomTunings}"
+                                          Visibility="{x:Bind ViewModel.CustomListVisibility, Mode=OneWay}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:PresetItemViewModel">
+                                        <Grid ColumnSpacing="12" Padding="0,6">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Bind Title}" TextWrapping="Wrap" FontWeight="SemiBold" Foreground="{ThemeResource ResonantTextBrush}" />
+                                                <TextBlock Text="{x:Bind Notes}" TextWrapping="Wrap" FontSize="12" Style="{StaticResource ResonantNumericStyle}" />
+                                            </StackPanel>
+                                            <Button Grid.Column="1" Width="36" Height="36" Padding="0" Tag="{x:Bind}" Click="OnRemoveCustom"
+                                                    ToolTipService.ToolTip="{x:Bind loc:Text.Get('Remove tuning')}" AutomationProperties.Name="{x:Bind loc:Text.Get('Remove custom tuning')}">
+                                                <FontIcon Glyph="&#xE74D;" FontSize="16" />
+                                            </Button>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Editor -->
+                    <Border Style="{StaticResource ResonantPanelStyle}">
+                        <StackPanel Spacing="12">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <FontIcon Glyph="&#xE70F;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Custom tuning editor')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                            </StackPanel>
+                            <TextBlock Text="{x:Bind loc:Text.Get('Session only. Not saved after closing.')}" Style="{StaticResource ResonantMutedStyle}" FontSize="12" />
+
+                            <TextBox Header="{x:Bind loc:Text.Get('Tuning name')}"
+                                     MaxLength="40"
+                                     Text="{x:Bind ViewModel.EditorName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <StackPanel Spacing="12">
+                                <ComboBox Header="{x:Bind loc:Text.Get('Instrument')}" HorizontalAlignment="Left" MinWidth="220"
+                                          ItemsSource="{x:Bind ViewModel.InstrumentChoices}" DisplayMemberPath="Name"
+                                          SelectedItem="{x:Bind ViewModel.EditorInstrument, Mode=TwoWay}" />
+                                <NumberBox Header="{x:Bind loc:Text.Get('Number of strings')}" HorizontalAlignment="Left" Width="180" Minimum="1" Maximum="12" SmallChange="1"
+                                           SpinButtonPlacementMode="Inline"
+                                           Value="{x:Bind ViewModel.EditorStringCount, Mode=TwoWay}" />
+                            </StackPanel>
+                            <TextBox Header="{x:Bind loc:Text.Get('String targets, in physical string order')}"
+                                     PlaceholderText="E2 A2 D3 G3 B3 E4"
+                                     Text="{x:Bind ViewModel.EditorTargets, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Style="{StaticResource ResonantMutedStyle}" FontSize="12"
+                                       Text="{x:Bind loc:Text.Get('Octaves matter. Repeated notes are allowed. Use 1 to 12 strings.')}" />
+
+                            <InfoBar Severity="Error" IsClosable="False" Title="{x:Bind loc:Text.Get('Check the tuning')}"
+                                     IsOpen="{x:Bind ViewModel.EditorErrorsOpen, Mode=OneWay}"
+                                     Message="{x:Bind ViewModel.EditorErrors, Mode=OneWay}" />
+
+                            <Button Command="{x:Bind ViewModel.UseForSessionCommand}">
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <FontIcon Glyph="&#xE73E;" FontSize="14" />
+                                    <TextBlock Text="{x:Bind loc:Text.Get('Use for this session')}" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

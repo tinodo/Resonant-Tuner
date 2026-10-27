@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "resonant: build-app",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/Resonant.App/Resonant.App.csproj",
+                "--configuration",
+                "Debug"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "runOptions": { "instanceLimit": 1, "instancePolicy": "silent" }
+        },
+        {
+            "label": "resonant: test-core",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/tests/Resonant.Core.Tests",
+                "-c",
+                "Debug"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "test",
+            "runOptions": { "instanceLimit": 1, "instancePolicy": "silent" }
+        },
+        {
+            "label": "resonant: test-audio",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/tests/Resonant.Audio.Tests",
+                "-c",
+                "Debug"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": "test",
+            "runOptions": { "instanceLimit": 1, "instancePolicy": "silent" }
+        }
+    ]
+}

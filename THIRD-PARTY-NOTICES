@@ -1,0 +1,22 @@
+THIRD-PARTY NOTICES
+
+Resonant Tuner's own source is licensed under the MIT License (see LICENSE).
+
+The application uses the following third-party components.
+
+Math.NET Numerics 5.0.0
+  Copyright (c) Math.NET Project. MIT License.
+  https://numerics.mathdotnet.com/
+
+Windows App SDK (Microsoft.WindowsAppSDK) 2.5.1 and its redistributable
+components
+  Copyright (c) Microsoft Corporation. Distributed under the Microsoft Software
+  License Terms included with the NuGet package.
+  https://learn.microsoft.com/windows/apps/windows-app-sdk/
+
+Build and test only (not distributed with the application):
+  Microsoft.Windows.SDK.BuildTools - Microsoft Software License Terms
+  MSTest - MIT License
+
+The exact package versions, including transitive packages, are pinned in the
+packages.lock.json file next to each project.

@@ -1,0 +1,163 @@
+<Page
+    x:Class="Resonant.App.Views.SoundAndDisplayPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Resonant.Core.Localization"
+    NavigationCacheMode="Required"
+    Background="Transparent">
+
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Wide">
+                        <VisualState.StateTriggers><AdaptiveTrigger MinWindowWidth="800" /></VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="DisplayColumn.Width" Value="*" />
+                            <Setter Target="DisplaySections.(Grid.Column)" Value="1" />
+                            <Setter Target="DisplaySections.(Grid.Row)" Value="0" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Narrow">
+                        <VisualState.StateTriggers><AdaptiveTrigger MinWindowWidth="0" /></VisualState.StateTriggers>
+                        <VisualState.Setters><Setter Target="LayoutRoot.Padding" Value="16,12" /></VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+        <Grid x:Name="LayoutRoot" MaxWidth="1100" Padding="24,16" RowSpacing="16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{x:Bind loc:Text.Get('Sound &amp; display')}" Style="{StaticResource ResonantHeadingStyle}" FontSize="24" AutomationProperties.HeadingLevel="Level1" />
+                    <TextBlock Text="{x:Bind loc:Text.Get('Settings reset when Resonant Tuner closes.')}" Style="{StaticResource ResonantMutedStyle}" FontSize="12" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" ColumnSpacing="16" RowSpacing="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.25*" />
+                    <ColumnDefinition x:Name="DisplayColumn" Width="0" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Spacing="20" VerticalAlignment="Top">
+
+                    <Border Style="{StaticResource ResonantPanelStyle}">
+                        <StackPanel Spacing="12">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <FontIcon Glyph="&#xE720;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Sound input')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                            </StackPanel>
+
+                            <ComboBox Header="{x:Bind loc:Text.Get('Input device')}" HorizontalAlignment="Stretch"
+                                      ItemsSource="{x:Bind ViewModel.InputDevices}"
+                                      DisplayMemberPath="Name"
+                                      SelectedItem="{x:Bind ViewModel.SelectedInput, Mode=TwoWay}" />
+                            <StackPanel Spacing="12">
+                                <ComboBox Header="{x:Bind loc:Text.Get('Input channel')}" HorizontalAlignment="Left" MinWidth="220"
+                                          ItemsSource="{x:Bind ViewModel.ChannelChoices}"
+                                          SelectedIndex="{x:Bind ViewModel.ChannelIndex, Mode=TwoWay}" />
+                                <ComboBox Header="{x:Bind loc:Text.Get('Reference output')}" HorizontalAlignment="Stretch"
+                                          ItemsSource="{x:Bind ViewModel.OutputDevices}"
+                                          DisplayMemberPath="Name"
+                                          SelectedItem="{x:Bind ViewModel.SelectedOutput, Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel Spacing="8">
+                                <Button Command="{x:Bind ViewModel.RefreshDevicesCommand}" Content="{x:Bind loc:Text.Get('Refresh devices')}" />
+                                <TextBlock VerticalAlignment="Center" FontSize="12"
+                                           Text="{x:Bind ViewModel.DeviceStatus, Mode=OneWay}"
+                                           Style="{StaticResource ResonantMutedStyle}" />
+                            </StackPanel>
+                            <TextBlock Style="{StaticResource ResonantMutedStyle}" FontSize="12"
+                                       Text="{x:Bind loc:Text.Get('If the selected input channel is unavailable, channel 1 is used.')}" />
+
+                            <InfoBar Severity="Warning" IsClosable="False" IsOpen="True"
+                                     Title="{x:Bind loc:Text.Get('Microphone access is off')}"
+                                     Message="{x:Bind loc:Text.Get('Enable access in Windows Settings, then retry.')}"
+                                     Visibility="{x:Bind ViewModel.PermissionAlertVisibility, Mode=OneWay}">
+                                <InfoBar.ActionButton>
+                                    <Button Content="{x:Bind loc:Text.Get('Retry')}" Command="{x:Bind ViewModel.RetryCommand}" />
+                                </InfoBar.ActionButton>
+                                <InfoBar.Content>
+                                    <HyperlinkButton Content="{x:Bind loc:Text.Get('Open Windows microphone settings')}"
+                                                     Command="{x:Bind ViewModel.OpenMicrophoneSettingsCommand}" />
+                                </InfoBar.Content>
+                            </InfoBar>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource ResonantPanelStyle}">
+                        <StackPanel Spacing="12">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <FontIcon Glyph="&#xE713;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Tuning precision')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                            </StackPanel>
+                            <StackPanel Spacing="12">
+                                <NumberBox Header="{x:Bind loc:Text.Get('Reference A4 (Hz)')}" HorizontalAlignment="Left" Width="180" Minimum="415" Maximum="466" SmallChange="1" LargeChange="5"
+                                           SpinButtonPlacementMode="Inline"
+                                           Value="{x:Bind ViewModel.A4Value, Mode=TwoWay}" />
+                                <NumberBox Header="{x:Bind loc:Text.Get('In-tune tolerance (cents)')}" HorizontalAlignment="Left" Width="180" Minimum="1" Maximum="10" SmallChange="0.5" LargeChange="1"
+                                           SpinButtonPlacementMode="Inline"
+                                           Value="{x:Bind ViewModel.ToleranceValue, Mode=TwoWay}" />
+                            </StackPanel>
+                            <ComboBox Header="{x:Bind loc:Text.Get('Note spelling')}" HorizontalAlignment="Left" MinWidth="220"
+                                      ItemsSource="{x:Bind ViewModel.SpellingChoices}"
+                                      SelectedIndex="{x:Bind ViewModel.SpellingIndex, Mode=TwoWay}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel x:Name="DisplaySections" Grid.Row="1" Spacing="16" VerticalAlignment="Top">
+
+                    <Border Style="{StaticResource ResonantPanelStyle}">
+                        <StackPanel Spacing="12">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <FontIcon Glyph="&#xE7F4;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Display')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                            </StackPanel>
+                            <ComboBox Header="{x:Bind loc:Text.Get('Theme')}" HorizontalAlignment="Left" MinWidth="180"
+                                      ItemsSource="{x:Bind ViewModel.ThemeChoices}"
+                                      SelectedIndex="{x:Bind ViewModel.ThemeIndex, Mode=TwoWay}" />
+                            <ComboBox Header="{x:Bind loc:Text.Get('Interface language')}" HorizontalAlignment="Left" MinWidth="180"
+                                      ItemsSource="{x:Bind ViewModel.LanguageChoices}"
+                                      SelectedIndex="{x:Bind ViewModel.LanguageIndex, Mode=TwoWay}" />
+                            <ToggleSwitch Header="{x:Bind loc:Text.Get('Keep on top of other windows')}" OnContent="{x:Bind loc:Text.Get('On')}" OffContent="{x:Bind loc:Text.Get('Off')}"
+                                          IsOn="{x:Bind ViewModel.AlwaysOnTop, Mode=TwoWay}" />
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="{x:Bind loc:Text.Get('Compact mode')}" VerticalAlignment="Center" Foreground="{ThemeResource ResonantTextBrush}" />
+                                <Button Command="{x:Bind ViewModel.ToggleCompactCommand}"
+                                        Content="{x:Bind ViewModel.CompactButtonText, Mode=OneWay}"
+                                        AutomationProperties.Name="{x:Bind loc:Text.Get('Toggle compact mode')}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource ResonantPanelStyle}">
+                        <StackPanel Spacing="8">
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <FontIcon Glyph="&#xE765;" Foreground="{ThemeResource ResonantPrimaryBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Keyboard')}" Style="{StaticResource ResonantSectionStyle}" AutomationProperties.HeadingLevel="Level2" />
+                            </StackPanel>
+                            <Grid>
+                                <TextBlock Text="{x:Bind loc:Text.Get('Start / stop listening')}" Foreground="{ThemeResource ResonantTextBrush}" />
+                                <TextBlock Text="{x:Bind loc:Text.Get('Space')}" HorizontalAlignment="Right" Foreground="{ThemeResource ResonantMutedBrush}" />
+                            </Grid>
+                            <Grid>
+                                <TextBlock Text="{x:Bind loc:Text.Get('Lock a string (string 1 to 9)')}" Foreground="{ThemeResource ResonantTextBrush}" />
+                                <TextBlock Text="1 - 9" HorizontalAlignment="Right" Foreground="{ThemeResource ResonantMutedBrush}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
