@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resonant Tuner - an offline instrument tuner for Windows</title>
+  <meta name="description" content="A fast, accurate and fully offline instrument tuner for Windows. Guitar, bass, ukulele, violin, mandolin and chromatic tunings. No recording, no uploads, no accounts.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Resonant Tuner">
+  <meta property="og:description" content="A fast, accurate and fully offline instrument tuner for Windows.">
+  <meta property="og:image" content="https://tinodo.github.io/Resonant-Tuner/screenshot.png">
+  <meta property="og:url" content="https://tinodo.github.io/Resonant-Tuner/">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="./"><img src="assets/icon.png" alt="" width="32" height="32"><span>Resonant Tuner</span></a>
+      <nav aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#privacy">Privacy</a>
+        <a href="https://github.com/tinodo/Resonant-Tuner">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <h1>Tune by ear less.<br>Tune by sight more.</h1>
+        <p class="lead">A fast, accurate and fully offline instrument tuner for Windows. Pluck a string, see how far off it is, and tune with confidence.</p>
+        <div class="actions">
+          <a class="button primary" href="#download">Download</a>
+          <a class="button" href="https://github.com/tinodo/Resonant-Tuner">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="shot">
+        <img src="screenshot.png" width="1499" height="1091" alt="Resonant Tuner showing the tuning dial, live spectrum and string targets for a guitar in standard tuning">
+      </div>
+
+      <section id="features">
+        <div class="wrap" style="padding:0">
+          <h2>Features</h2>
+          <p class="sub">Everything a tuner needs, and nothing that gets in the way of playing.</p>
+          <div class="grid">
+            <div class="card"><h3>Accurate pitch detection</h3><p>A YIN-style estimator with tracking and smoothing gives a steady needle and strobe, and a clear "last reading" state when the signal drops out.</p></div>
+            <div class="card"><h3>Live spectrum</h3><p>A real-time frequency display (40 Hz to 12 kHz) sits behind the tuner so you can see what the microphone hears.</p></div>
+            <div class="card"><h3>Built-in tunings</h3><p>Guitar, bass, ukulele, violin and mandolin presets, plus a chromatic mode.</p></div>
+            <div class="card"><h3>Custom tunings</h3><p>Create your own tuning for the current session.</p></div>
+            <div class="card"><h3>Reference tones</h3><p>Play the target note for any string.</p></div>
+            <div class="card"><h3>Calibration and capo</h3><p>Adjustable reference pitch (A4 from 415 to 466 Hz) and capo support.</p></div>
+            <div class="card"><h3>Input control</h3><p>Choose the input device and channel, watch the input level, and pick the output device for reference tones.</p></div>
+            <div class="card"><h3>Compact mode</h3><p>A small window that stays out of the way while you play, with an optional keep-on-top setting.</p></div>
+            <div class="card"><h3>Five languages</h3><p>English, Dutch, German, French and Spanish. Follow Windows or switch live in Sound &amp; display.</p></div>
+            <div class="card"><h3>Accessible</h3><p>Keyboard operation (Space to pause or resume, 1-9 to lock a string), screen-reader names, and high-contrast and reduced-motion support.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download">
+        <div class="wrap" style="padding:0">
+          <h2>Download</h2>
+          <p class="sub">Free and open source. Requires Windows 11 (x64) and a microphone or audio interface.</p>
+          <div class="panel">
+            <ol>
+              <li>Open the <a href="https://github.com/tinodo/Resonant-Tuner/releases">Releases page</a> and download the portable ZIP (<code>ResonantTuner-…-win-x64.zip</code>).</li>
+              <li>Extract it anywhere and run <code>ResonantTuner.exe</code>.</li>
+            </ol>
+            <p class="note">Until the first release is published, download the <code>ResonantTuner-win-x64</code> artifact from the latest successful run on the <a href="https://github.com/tinodo/Resonant-Tuner/actions/workflows/ci.yml">Actions page</a> (a GitHub sign-in is required to download artifacts).</p>
+            <p class="note">The portable build is not yet code-signed, so Windows SmartScreen may ask for confirmation the first time you run it. Each release lists SHA-256 checksums you can verify.</p>
+            <p class="note">To force a language for a single launch: <code>ResonantTuner.exe --language nl-NL</code> (<code>en-US</code>, <code>nl-NL</code>, <code>de-DE</code>, <code>fr-FR</code> or <code>es-ES</code>).</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy">
+        <div class="wrap" style="padding:0">
+          <h2>Private by design</h2>
+          <p class="sub">Resonant Tuner has no network features, collects no data and stores nothing on disk. Audio is processed in memory on your device and released when the app closes.</p>
+          <p><a href="privacy.html">Read the privacy policy</a></p>
+        </div>
+      </section>
+
+      <section id="open-source">
+        <div class="wrap" style="padding:0">
+          <h2>Open source</h2>
+          <p class="sub">Built with WinUI 3, C# and .NET 10 and released under the MIT license. Issues and pull requests are welcome.</p>
+          <div class="actions" style="justify-content:flex-start">
+            <a class="button" href="https://github.com/tinodo/Resonant-Tuner">Source code</a>
+            <a class="button" href="https://github.com/tinodo/Resonant-Tuner/issues/new/choose">Report an issue</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; Resonant contributors. Released under the <a href="https://github.com/tinodo/Resonant-Tuner/blob/main/LICENSE">MIT license</a>.</span>
+      <span><a href="privacy.html">Privacy</a> &middot; <a href="https://github.com/tinodo/Resonant-Tuner/blob/main/THIRD-PARTY-NOTICES">Third-party notices</a> &middot; <a href="https://github.com/tinodo/Resonant-Tuner/issues">Support</a></span>
+    </div>
+  </footer>
+</body>
+</html>
