@@ -6,13 +6,13 @@
     <TargetPlatformMinVersion>10.0.22000.0</TargetPlatformMinVersion>
     <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
     <RootNamespace>Resonant.App</RootNamespace>
-    <AssemblyName>Resonant</AssemblyName>
+    <AssemblyName>ResonantTuner</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Resonant.ico</ApplicationIcon>
     <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
     <UseCurrentRuntimeIdentifier>true</UseCurrentRuntimeIdentifier>
     <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>false</EnableMsixTooling>
+    <EnableMsixTooling>true</EnableMsixTooling>
     <!-- Unpackaged, self-contained build for CI and development. MSIX packaging needs the PNG assets and a signing identity (see packaging\Package.appxmanifest). -->
     <WindowsPackageType>None</WindowsPackageType>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>

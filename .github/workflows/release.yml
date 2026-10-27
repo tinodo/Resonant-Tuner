@@ -59,7 +59,7 @@ jobs:
       - name: Retain release packages
         uses: actions/upload-artifact@v7
         with:
-          name: Resonant-release-packages
+          name: ResonantTuner-release-packages
           path: artifacts/release-${{ inputs.version }}/
           if-no-files-found: error
       - name: Create unpublished draft release
@@ -74,5 +74,5 @@ jobs:
 
           The unsigned MSIX is intended for Microsoft Partner Center ingestion, not direct sideload installation.
           '@
-          gh release create $tag "$release/Resonant-$env:RELEASE_VERSION-win-x64.zip" "$release/Resonant-$env:RELEASE_VERSION-win-x64.msix" "$release/SHA256SUMS.txt" --draft --target $env:GITHUB_SHA --title "Resonant Tuner $env:RELEASE_VERSION" --notes $notes
+          gh release create $tag "$release/ResonantTuner-$env:RELEASE_VERSION-win-x64.zip" "$release/ResonantTuner-$env:RELEASE_VERSION-win-x64.msix" "$release/SHA256SUMS.txt" --draft --target $env:GITHUB_SHA --title "Resonant Tuner $env:RELEASE_VERSION" --notes $notes
           if ($LASTEXITCODE -ne 0) { throw 'Draft release creation failed.' }

@@ -30,7 +30,7 @@
   </Resources>
 
   <Applications>
-    <Application Id="App" Executable="Resonant.exe" uap10:RuntimeBehavior="packagedClassicApp" uap10:TrustLevel="mediumIL">
+    <Application Id="App" Executable="ResonantTuner.exe" uap10:RuntimeBehavior="packagedClassicApp" uap10:TrustLevel="mediumIL">
       <uap:VisualElements
         DisplayName="Resonant Tuner"
         Description="An offline, accurate instrument tuner. Audio never leaves your device."

@@ -34,7 +34,7 @@ Resonant Tuner has no network features, collects no data and stores nothing on d
 
 ## Getting started
 
-Every build is verified by CI. Download the latest portable ZIP from the **Actions** tab (artifact `Resonant-win-x64`) or from the **Releases** page once a release is published, then run `Resonant.exe`.
+Every build is verified by CI. Download the latest portable ZIP from the **Actions** tab (artifact `ResonantTuner-win-x64`) or from the **Releases** page once a release is published, then run `ResonantTuner.exe`.
 
 To build and run from source:
 
@@ -44,7 +44,7 @@ dotnet build src/Resonant.App/Resonant.App.csproj --configuration Debug
 dotnet run --project src/Resonant.App/Resonant.App.csproj
 ```
 
-To force a language for a single launch: `Resonant.exe --language nl-NL` (`en-US`, `nl-NL`, `de-DE`, `fr-FR` or `es-ES`).
+To force a language for a single launch: `ResonantTuner.exe --language nl-NL` (`en-US`, `nl-NL`, `de-DE`, `fr-FR` or `es-ES`).
 
 ## Tests
 
