@@ -61,11 +61,11 @@ The suites cover pitch math, DSP on synthetic signals, tuning sessions, localiza
 
 | Path | Purpose |
 |------|---------|
-| `src/Resonant.Core` | Pitch math, tunings, estimator, tracker, spectrum analysis and the tuner controller. No WinUI dependency. |
+| `src/Resonant.Core` | Pitch math, tunings, estimator, tracker, spectrum analysis and the tuner controller. No WinUI dependency. Also published as the `Resonant.Core` NuGet package. |
 | `src/Resonant.App` | WinUI 3 app: pages, view models, and `AudioGraph` capture and reference-tone adapters. |
 | `tests/Resonant.Core.Tests` | Deterministic tests on synthetic signals. |
 | `tests/Resonant.Audio.Tests` | Controller and device-lifecycle tests with fakes. |
-| `packaging` | Release packaging script and MSIX manifest. |
+| `packaging` | Release and NuGet packaging scripts and the MSIX manifest. |
 
 ## Contributing
 
@@ -78,6 +78,36 @@ Push a version tag such as `v1.0.1.0` on a commit from `main` to build, test and
 Alternatively, run the **Release** workflow from the **Actions** tab on `main` and enter the version without the `v` prefix. Select **Keep the release unpublished for review** to prepare a draft instead. Use a new version for each release; existing releases are never overwritten.
 
 Both paths run the core and audio tests before packaging the self-contained Windows x64 ZIP, unsigned Store MSIX and SHA-256 checksums. Packages are uploaded to a draft first; publication happens only after all assets have uploaded successfully.
+
+The same run also packs and validates the `Resonant.Core` library as a NuGet package. Once the release is published, a separate `publish-package` job pushes that exact package to [GitHub Packages](https://github.com/tinodo?tab=packages&repo_name=Resonant-Tuner). The package version is the release version without the trailing `.0`: tag `v1.0.2.0` publishes `Resonant.Core` 1.0.2. Draft releases publish no package, and re-running the job skips a version that already exists. GitHub publishes the first version of a package as private; to show it on the repository page, open the package once and choose **Package settings**, **Danger Zone**, **Change visibility**, **Public**. This cannot be undone.
+
+## Using Resonant.Core
+
+`Resonant.Core` is the UI-free tuning engine of the app (net10.0). GitHub Packages requires authentication to restore any NuGet package, public or not: create a [personal access token (classic)](https://github.com/settings/tokens) with the `read:packages` scope, and never commit it.
+
+```powershell
+dotnet nuget add source "https://nuget.pkg.github.com/tinodo/index.json" --name github --username <github-user> --password <token> --store-password-in-clear-text
+```
+
+The flag stores the token unencrypted in your user-level NuGet configuration. NuGet can encrypt it on Windows only, so you can omit the flag there. Then add a `nuget.config` next to your solution so that only `Resonant.*` comes from GitHub Packages and everything else from nuget.org:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSourceMapping>
+    <packageSource key="nuget.org">
+      <package pattern="*" />
+    </packageSource>
+    <packageSource key="github">
+      <package pattern="Resonant.*" />
+    </packageSource>
+  </packageSourceMapping>
+</configuration>
+```
+
+```powershell
+dotnet add package Resonant.Core
+```
 
 ## License
 
