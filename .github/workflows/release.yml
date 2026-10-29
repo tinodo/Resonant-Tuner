@@ -56,6 +56,18 @@ jobs:
           }
           git merge-base --is-ancestor HEAD origin/main
           if ($LASTEXITCODE -ne 0) { throw 'Releases must use a commit from main.' }
+          $tag = "v$env:RELEASE_VERSION"
+          $existingTag = git tag --list $tag
+          if ($LASTEXITCODE -ne 0) { throw 'Could not check the release tag.' }
+          if ($existingTag) {
+            $tagCommit = git rev-parse "$tag^{commit}"
+            if ($LASTEXITCODE -ne 0) { throw 'Could not resolve the release tag.' }
+            $buildCommit = git rev-parse HEAD
+            if ($LASTEXITCODE -ne 0) { throw 'Could not resolve the build commit.' }
+            if ($tagCommit -ne $buildCommit) {
+              throw 'The release tag points to a different commit. Use a new version.'
+            }
+          }
           "RELEASE_VERSION=$env:RELEASE_VERSION" >> $env:GITHUB_ENV
       - name: Restore locked dependencies
         run: dotnet restore Resonant.sln --locked-mode
