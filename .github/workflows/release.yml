@@ -75,6 +75,8 @@ jobs:
         run: dotnet test tests/Resonant.Core.Tests/Resonant.Core.Tests.csproj --configuration Release --no-restore --logger trx --results-directory TestResults/Core
       - name: Test audio controller
         run: dotnet test tests/Resonant.Audio.Tests/Resonant.Audio.Tests.csproj --configuration Release --no-restore --logger trx --results-directory TestResults/Audio
+      - name: Pack and validate Resonant.Core NuGet package
+        run: ./packaging/Build-NuGetPackage.ps1 -Version $env:RELEASE_VERSION -NoRestore
       - name: Package Windows x64 ZIP and unsigned Store MSIX
         run: ./packaging/Build-Release.ps1 -Version $env:RELEASE_VERSION -NoRestore
       - name: Upload test results
@@ -89,6 +91,12 @@ jobs:
         with:
           name: ResonantTuner-release-packages
           path: artifacts/release-${{ env.RELEASE_VERSION }}/
+          if-no-files-found: error
+      - name: Retain NuGet package
+        uses: actions/upload-artifact@v7
+        with:
+          name: Resonant.Core-nuget-package
+          path: artifacts/nuget/*.nupkg
           if-no-files-found: error
       - name: Create release with verified packages
         env:
@@ -112,3 +120,71 @@ jobs:
         run: |
           gh release edit "v$env:RELEASE_VERSION" --draft=false --latest
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed.' }
+
+  publish-package:
+    # Separate job: the write token lives where no repository code runs, and a failed push can be re-run on its own.
+    needs: release
+    if: github.event_name == 'push' || !inputs.draft
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      packages: write
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Download Resonant.Core package
+        uses: actions/download-artifact@v8
+        with:
+          name: Resonant.Core-nuget-package
+          path: package
+      - name: Push to GitHub Packages
+        env:
+          OWNER: ${{ github.repository_owner }}
+          TOKEN: ${{ github.token }}
+        run: |
+          $packages = @(Get-ChildItem -LiteralPath package -Filter '*.nupkg' -File)
+          if ($packages.Count -ne 1) { throw "Expected one package but found $($packages.Count)." }
+          dotnet nuget add source "https://nuget.pkg.github.com/$env:OWNER/index.json" --name github --username $env:OWNER --password $env:TOKEN --store-password-in-clear-text
+          if ($LASTEXITCODE -ne 0) { throw 'Adding the GitHub Packages source failed.' }
+          dotnet nuget push $packages[0].FullName --source github --api-key $env:TOKEN --skip-duplicate
+          if ($LASTEXITCODE -ne 0) { throw 'Pushing the package failed.' }
+          "PACKAGE_FILE=$($packages[0].Name)" >> $env:GITHUB_ENV
+      - name: Check package visibility
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          $version = $env:PACKAGE_FILE -replace '^Resonant\.Core\.(.+)\.nupkg$', '$1'
+          $package = $null
+          $packageName = $null
+          foreach ($name in 'Resonant.Core', 'resonant.core') {
+            $json = gh api "users/$env:OWNER/packages/nuget/$name" 2>$null
+            if ($LASTEXITCODE -eq 0 -and $json) { $package = $json | ConvertFrom-Json; $packageName = $name; break }
+          }
+          $lines = @('### Resonant.Core on GitHub Packages', '')
+          $public = $false
+          if ($package) {
+            $listed = $false
+            for ($attempt = 1; $attempt -le 3 -and -not $listed; $attempt++) {
+              $names = @(gh api "users/$env:OWNER/packages/nuget/$packageName/versions" --paginate --jq '.[].name' 2>$null)
+              if ($LASTEXITCODE -eq 0 -and $names -contains $version) { $listed = $true }
+              elseif ($attempt -lt 3) { Start-Sleep -Seconds 10 }
+            }
+            $lines += "- Version ${version}: $(if ($listed) { 'listed' } else { 'not listed yet' })"
+            $lines += "- Visibility: $($package.visibility)"
+            $lines += "- Package: $($package.html_url)"
+            $public = $package.visibility -eq 'public'
+          }
+          else {
+            $lines += "- Version $version was pushed."
+            $lines += '- The package is not readable as a public package, so it is private: GitHub publishes the first version of a package as private.'
+          }
+          if (-not $public) {
+            $lines += '- To list it on the repository page: open the package, then Package settings, Danger Zone, Change visibility, Public. GitHub has no API for this and it cannot be undone.'
+            Write-Host '::notice title=Make Resonant.Core public::GitHub publishes the first version of a package as private and has no API to change that. To list it on the repository page: open the package, then Package settings, Danger Zone, Change visibility, Public. This cannot be undone.'
+          }
+          $lines | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+          exit 0

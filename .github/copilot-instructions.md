@@ -17,6 +17,7 @@ Resonant Tuner is an offline guitar/instrument tuner for Windows: WinUI 3, C#, .
 - **XAML/WinUI:** `x:Bind` correctness, accessibility names, keyboard operation, high-contrast and reduced-motion behavior. No `x:Bind` in `StateTrigger` inside item templates.
 - **DSP changes** need a synthetic-signal test; do not claim real-instrument accuracy from synthetic results.
 - **Supply chain:** dependencies are pinned with `packages.lock.json` and restored with `--locked-mode`; flag unpinned or unmaintained packages, and any signing material (`*.pfx`, `*.snk`) or secrets.
+- **Package publishing:** `publish-package` in `release.yml` must stay gated on the tested `release` job (`needs`), skip drafts, and push the exact package artifact that job validated. Flag anything that widens `packages` or `contents` write permissions, adds a PAT or secret, adds checkout or repository script execution to that job, or lets a package publish from a draft or a commit outside `main`.
 
 ## Conventions
 

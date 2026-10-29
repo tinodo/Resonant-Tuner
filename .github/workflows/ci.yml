@@ -31,6 +31,8 @@ jobs:
         run: dotnet test tests/Resonant.Core.Tests/Resonant.Core.Tests.csproj --configuration Release --no-restore --logger trx --results-directory TestResults/Core
       - name: Test audio controller
         run: dotnet test tests/Resonant.Audio.Tests/Resonant.Audio.Tests.csproj --configuration Release --no-restore --logger trx --results-directory TestResults/Audio
+      - name: Pack and validate Resonant.Core NuGet package
+        run: ./packaging/Build-NuGetPackage.ps1 -NoRestore
       - name: Package Windows x64 ZIP and unsigned Store MSIX
         run: ./packaging/Build-Release.ps1 -NoRestore
       - name: Upload test results

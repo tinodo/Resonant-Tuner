@@ -4,8 +4,21 @@
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>Resonant.Core</RootNamespace>
     <AssemblyName>Resonant.Core</AssemblyName>
-    <IsPackable>false</IsPackable>
+    <IsPackable>true</IsPackable>
+    <PackageId>Resonant.Core</PackageId>
+    <Description>Pitch detection and tuning engine of Resonant Tuner: YIN-style pitch estimator, pitch tracker, spectrum analysis, instrument tunings and a tuner controller. No UI dependency. Localized in English, Dutch, German, French and Spanish.</Description>
+    <PackageTags>tuner;pitch-detection;yin;dsp;guitar;music</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://tinodo.github.io/Resonant-Tuner/</PackageProjectUrl>
+    <!-- GitHub Packages links the package to this repository from the nuspec, and only a linked package can be pushed with GITHUB_TOKEN. -->
+    <RepositoryUrl>https://github.com/tinodo/Resonant-Tuner</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="Resonant.Core.Tests" />
