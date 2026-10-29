@@ -34,7 +34,9 @@ Resonant Tuner has no network features, collects no data and stores nothing on d
 
 ## Getting started
 
-Every build is verified by CI. Download the latest portable ZIP from the **Actions** tab (artifact `ResonantTuner-win-x64`) or from the **Releases** page once a release is published, then run `ResonantTuner.exe`.
+Download the portable ZIP from the [latest release](https://github.com/tinodo/Resonant-Tuner/releases/latest), extract it, then run `ResonantTuner.exe`. Each release includes `SHA256SUMS.txt` to verify the downloads. The unsigned MSIX is for Microsoft Partner Center submission, not direct installation.
+
+Development builds are available from the **Actions** tab (artifact `ResonantTuner-win-x64`).
 
 To build and run from source:
 
@@ -68,6 +70,14 @@ The suites cover pitch math, DSP on synthetic signals, tuning sessions, localiza
 ## Contributing
 
 Issues and pull requests are welcome. Pull requests run the full build and test pipeline and receive an automated GitHub Copilot review. Please add or update tests with behavior changes, and add any new user-visible text to all five language catalogs in `src/Resonant.Core/Localization`.
+
+## Releases
+
+Push a version tag such as `v1.0.1.0` on a commit from `main` to build, test and publish a GitHub release automatically. Versions must use `major.minor.build.0`, with each component no greater than 65535.
+
+Alternatively, run the **Release** workflow from the **Actions** tab on `main` and enter the version without the `v` prefix. Select **Keep the release unpublished for review** to prepare a draft instead. Use a new version for each release; existing releases are never overwritten.
+
+Both paths run the core and audio tests before packaging the self-contained Windows x64 ZIP, unsigned Store MSIX and SHA-256 checksums. Packages are uploaded to a draft first; publication happens only after all assets have uploaded successfully.
 
 ## License
 
