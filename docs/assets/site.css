@@ -87,7 +87,7 @@ nav a:hover { color: var(--text); }
   font-size: 1.15rem;
 }
 
-.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; }
 .button {
   display: inline-block;
   padding: 11px 22px;
@@ -99,6 +99,10 @@ nav a:hover { color: var(--text); }
 }
 .button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .button:hover { filter: brightness(1.08); }
+
+.store-badge { display: inline-block; line-height: 0; border-radius: 8px; }
+.store-badge img { display: block; width: 200px; max-width: 100%; height: auto; }
+.store-badge:hover { filter: brightness(1.08); }
 
 .shot { margin: 8px auto 0; max-width: 880px; }
 .shot img {
@@ -136,6 +140,9 @@ section > .wrap > p.sub { color: var(--muted); margin: 0 0 28px; max-width: 680p
 }
 .panel ol, .panel ul { margin: 8px 0 0; padding-left: 22px; }
 .panel li { margin: 6px 0; }
+.panel h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.panel + .panel { margin-top: 16px; }
+.panel > :last-child { margin-bottom: 0; }
 .note { color: var(--muted); font-size: 0.93rem; margin-top: 14px; }
 
 code {

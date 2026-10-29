@@ -25,6 +25,13 @@ Fonts: the app uses the fonts installed with Windows (Segoe UI, Segoe UI
 Variable, Segoe Fluent Icons and Bahnschrift); no font files are embedded or
 redistributed.
 
+Website and README artwork (not part of the application): the "Get it from
+Microsoft" badge in docs/assets/microsoft-store-badge-*.svg is Microsoft's
+artwork, copyright (c) Microsoft Corporation. It is the unmodified "en-us dark"
+and "en-us light" badge from https://get.microsoft.com/images/, used to link to
+the app's Microsoft Store listing under the Microsoft Store badge guidelines. It
+is not covered by the MIT License.
+
 --------------------------------------------------------------------------------
 Math.NET Numerics 5.0.0
 https://github.com/mathnet/mathnet-numerics/blob/v5.0.0/LICENSE.md

@@ -30,7 +30,8 @@
         <h1>Tune by ear less.<br>Tune by sight more.</h1>
         <p class="lead">A fast, accurate and fully offline instrument tuner for Windows. Pluck a string, see how far off it is, and tune with confidence.</p>
         <div class="actions">
-          <a class="button primary" href="#download">Download</a>
+          <a class="store-badge" href="https://apps.microsoft.com/detail/9n2fklksrghg"><picture><source media="(prefers-color-scheme: light)" srcset="assets/microsoft-store-badge-for-light-bg.svg"><img src="assets/microsoft-store-badge-for-dark-bg.svg" width="161" height="44" alt="Get Resonant Tuner from Microsoft Store"></picture></a>
+          <a class="button" href="#download">Portable ZIP</a>
           <a class="button" href="https://github.com/tinodo/Resonant-Tuner">View on GitHub</a>
         </div>
       </div>
@@ -63,11 +64,17 @@
           <h2>Download</h2>
           <p class="sub">Free and open source. Requires Windows 11 (x64) and a microphone or audio interface.</p>
           <div class="panel">
+            <h3>Microsoft Store</h3>
+            <p>The easiest way to install. One click, and Microsoft Store keeps it up to date.</p>
+            <p><a class="store-badge" href="https://apps.microsoft.com/detail/9n2fklksrghg"><picture><source media="(prefers-color-scheme: light)" srcset="assets/microsoft-store-badge-for-light-bg.svg"><img src="assets/microsoft-store-badge-for-dark-bg.svg" width="161" height="44" alt="Get Resonant Tuner from Microsoft Store"></picture></a></p>
+          </div>
+          <div class="panel">
+            <h3>Portable ZIP</h3>
+            <p>No installation needed.</p>
             <ol>
               <li>Open the <a href="https://github.com/tinodo/Resonant-Tuner/releases">Releases page</a> and download the portable ZIP (<code>ResonantTuner-…-win-x64.zip</code>).</li>
               <li>Extract it anywhere and run <code>ResonantTuner.exe</code>.</li>
             </ol>
-            <p class="note">Until the first release is published, download the <code>ResonantTuner-win-x64</code> artifact from the latest successful run on the <a href="https://github.com/tinodo/Resonant-Tuner/actions/workflows/ci.yml">Actions page</a> (a GitHub sign-in is required to download artifacts).</p>
             <p class="note">The portable build is not yet code-signed, so Windows SmartScreen may ask for confirmation the first time you run it. Each release lists SHA-256 checksums you can verify.</p>
             <p class="note">To force a language for a single launch: <code>ResonantTuner.exe --language nl-NL</code> (<code>en-US</code>, <code>nl-NL</code>, <code>de-DE</code>, <code>fr-FR</code> or <code>es-ES</code>).</p>
           </div>
