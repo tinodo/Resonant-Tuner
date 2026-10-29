@@ -5,6 +5,8 @@
 
 A fast, accurate and fully offline instrument tuner for Windows. Pluck a string, see how far off it is, and tune with confidence. Everything is processed in memory on your device: no recording, no uploads, no accounts, no telemetry.
 
+<a href="https://apps.microsoft.com/detail/9n2fklksrghg"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/assets/microsoft-store-badge-for-dark-bg.svg"><img src="docs/assets/microsoft-store-badge-for-light-bg.svg" alt="Get Resonant Tuner from Microsoft Store" width="200"></picture></a>
+
 Built with WinUI 3, C# and .NET 10. Website: <https://tinodo.github.io/Resonant-Tuner/>
 
 ![Resonant Tuner showing the tuning dial, live spectrum and string targets](docs/screenshot.png)
@@ -34,7 +36,9 @@ Resonant Tuner has no network features, collects no data and stores nothing on d
 
 ## Getting started
 
-Download the portable ZIP from the [latest release](https://github.com/tinodo/Resonant-Tuner/releases/latest), extract it, then run `ResonantTuner.exe`. Each release includes `SHA256SUMS.txt` to verify the downloads. The unsigned MSIX is for Microsoft Partner Center submission, not direct installation.
+Get Resonant Tuner from [Microsoft Store](https://apps.microsoft.com/detail/9n2fklksrghg): it installs in one click and Microsoft Store keeps it up to date.
+
+Prefer a portable copy? Download the portable ZIP from the [latest release](https://github.com/tinodo/Resonant-Tuner/releases/latest), extract it, then run `ResonantTuner.exe`. Each release includes `SHA256SUMS.txt` to verify the downloads. The unsigned MSIX is for Microsoft Partner Center submission, not direct installation.
 
 Development builds are available from the **Actions** tab (artifact `ResonantTuner-win-x64`).
 
@@ -78,6 +82,8 @@ Push a version tag such as `v1.0.1.0` on a commit from `main` to build, test and
 Alternatively, run the **Release** workflow from the **Actions** tab on `main` and enter the version without the `v` prefix. Select **Keep the release unpublished for review** to prepare a draft instead. Use a new version for each release; existing releases are never overwritten.
 
 Both paths run the core and audio tests before packaging the self-contained Windows x64 ZIP, unsigned Store MSIX and SHA-256 checksums. Packages are uploaded to a draft first; publication happens only after all assets have uploaded successfully.
+
+Microsoft Store updates are submitted separately: the maintainer uploads a release's MSIX in Partner Center, so the Store version can trail the latest GitHub release.
 
 The same run also packs and validates the `Resonant.Core` library as a NuGet package. Once the release is published, a separate `publish-package` job pushes that exact package to [GitHub Packages](https://github.com/tinodo?tab=packages&repo_name=Resonant-Tuner). The package version is the release version without the trailing `.0`: tag `v1.0.2.0` publishes `Resonant.Core` 1.0.2. Draft releases publish no package, and re-running the job skips a version that already exists. GitHub publishes the first version of a package as private; to show it on the repository page, open the package once and choose **Package settings**, **Danger Zone**, **Change visibility**, **Public**. This cannot be undone.
 
