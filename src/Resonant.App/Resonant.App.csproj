@@ -10,7 +10,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Resonant.ico</ApplicationIcon>
     <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
-    <UseCurrentRuntimeIdentifier>true</UseCurrentRuntimeIdentifier>
+    <!-- Windows builds target the host architecture. On any other OS (Dependabot restores on Linux) pin win-x64, so packages.lock.json gets the same target sections everywhere and never a linux-x64 one (NU1004 in locked mode). -->
+    <UseCurrentRuntimeIdentifier Condition="$([MSBuild]::IsOSPlatform('Windows'))">true</UseCurrentRuntimeIdentifier>
+    <RuntimeIdentifier Condition="!$([MSBuild]::IsOSPlatform('Windows'))">win-x64</RuntimeIdentifier>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <!-- Unpackaged, self-contained build for CI and development. MSIX packaging needs the PNG assets and a signing identity (see packaging\Package.appxmanifest). -->
@@ -23,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.5.1" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.6.5" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.2705" />
   </ItemGroup>
 
